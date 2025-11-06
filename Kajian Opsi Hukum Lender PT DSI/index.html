@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajian Opsi Hukum Lender PT DSI</title>
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons --><script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Palette Warna Baru: Cerah, Profesional (Teal) */
+            --accent-color-main: #0d9488; /* Teal 600 */
+            --accent-color-secondary: #dc2626; /* Red 600 (Hanya untuk Peringatan) */
+            
+            /* Light Theme (Lebih Cerah) */
+            --light-bg: #f8fafc; /* Slate 50 */
+            --light-bg-alt: #ffffff;
+            --light-text: #0f172a; /* Slate 900 */
+            --light-text-secondary: #475569; /* Slate 600 */
+            --light-border: #e2e8f0; /* Slate 200 */
+            
+            /* Dark Theme (Tetap Profesional) */
+            --dark-bg: #0f172a; /* Slate 900 */
+            --dark-bg-alt: #1e293b; /* Slate 800 */
+            --dark-text: #e2e8f0; /* Slate 200 */
+            --dark-text-secondary: #94a3b8; /* Slate 400 */
+            --dark-border: #334155; /* Slate 700 */
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--light-bg);
+            --bg-alt-color: var(--light-bg-alt);
+            --text-color: var(--light-text);
+            --text-secondary-color: var(--light-text-secondary);
+            --border-color: var(--light-border);
+            --accent-color: var(--accent-color-main);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--dark-bg);
+            --bg-alt-color: var(--dark-bg-alt);
+            --text-color: var(--dark-text);
+            --text-secondary-color: var(--dark-text-secondary);
+            --border-color: var(--dark-border);
+            --accent-color: #2dd4bf; /* Teal 400 (Cerah) */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            
+            /* Proteksi Konten: Disable Text Selection */
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard */
+        }
+        
+        /* Background Decoration */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 15% 25%, rgba(13, 148, 136, 0.05), transparent 30%),
+                              radial-gradient(circle at 85% 75%, rgba(220, 38, 38, 0.05), transparent 30%);
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+        [data-theme="dark"] body::before {
+            background-image: radial-gradient(circle at 15% 25%, rgba(45, 212, 191, 0.08), transparent 30%),
+                              radial-gradient(circle at 85% 75%, rgba(220, 38, 38, 0.08), transparent 30%);
+        }
+
+        /* Navbar Style (Efek Kedalaman Kuat) */
+        #navbar {
+            position: sticky; top: 0; z-index: 40;
+            width: 100%;
+            background-color: color-mix(in srgb, var(--bg-alt-color) 85%, transparent);
+            backdrop-filter: blur(12px);
+            /* Efek kedalaman lebih kuat (Tailwind shadow-lg) */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -4px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid var(--border-color);
+        }
+        [data-theme="dark"] #navbar {
+             background-color: color-mix(in srgb, var(--dark-bg-alt) 80%, transparent);
+        }
+
+        /* Card Styles (Efek Kedalaman Kuat) */
+        .deep-card {
+            background-color: var(--bg-alt-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            /* Efek kedalaman lebih kuat (Tailwind shadow-lg) */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -4px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .deep-card-hover:hover {
+            transform: translateY(-6px);
+            /* Efek kedalaman sangat kuat (Tailwind shadow-2xl) */
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+        .text-secondary { color: var(--text-secondary-color); }
+        .accent-text { color: var(--accent-color); }
+        .accent-red { color: var(--accent-color-secondary); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary-color); }
+        
+        /* Nav active state (Untuk Aside Nav) */
+        .aside-nav-link {
+            @apply text-sm font-medium pl-3 pr-2 py-1.5 rounded-lg border-l-2;
+            color: var(--text-secondary-color);
+            border-color: transparent;
+            transition: all 0.2s ease;
+        }
+        .aside-nav-link:hover {
+            color: var(--text-color);
+            background-color: color-mix(in srgb, var(--border-color) 40%, transparent);
+        }
+        .aside-nav-link.active {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+            font-weight: 600;
+        }
+        /* Sub-link style */
+        .aside-nav-link.sub-link {
+            @apply pl-6;
+        }
+
+        /* Mobile Nav Menu (Dropdown) */
+        #mobile-nav-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            background-color: var(--bg-alt-color);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        #mobile-nav-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Modal Styles (Sama seperti v3, sudah canggih) */
+        .modal-backdrop {
+            position: fixed; inset: 0; z-index: 50;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            padding: 1rem;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-backdrop.open {
+            opacity: 1; visibility: visible;
+        }
+        .modal-content {
+            background-color: var(--bg-alt-color);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            width: 100%; max-width: 4xl; /* 896px */
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        [data-theme="dark"] .modal-content {
+            border: 1px solid var(--dark-border);
+        }
+        .modal-backdrop.open .modal-content {
+            transform: scale(1);
+        }
+        .modal-close-btn {
+            position: absolute; top: 1rem; right: 1rem;
+            background-color: color-mix(in srgb, var(--border-color) 50%, transparent);
+            color: var(--text-secondary-color);
+            border-radius: 9999px; padding: 0.25rem;
+            transition: all 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            background-color: color-mix(in srgb, var(--accent-color-secondary) 80%, transparent);
+            color: white;
+            transform: rotate(90deg);
+        }
+        .modal-body h4 {
+            @apply text-lg font-semibold mt-6 mb-2 text-color;
+        }
+        .modal-body ul {
+            @apply list-disc pl-6 space-y-2 text-secondary;
+        }
+        .modal-body p {
+            @apply text-secondary mb-4;
+        }
+        .modal-body .highlight-box {
+             @apply p-4 rounded-lg border;
+             border-color: var(--border-color);
+             background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+        }
+        .modal-body .highlight-box-red {
+             @apply p-4 rounded-lg border;
+             border-color: color-mix(in srgb, var(--accent-color-secondary) 50%, transparent);
+             background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);
+        }
+        .modal-body .highlight-box-red h5 {
+            @apply font-semibold;
+            color: var(--accent-color-secondary);
+        }
+    </style>
+</head>
+<body class="antialiased" oncontextmenu="return false;">
+
+    <!-- Navbar Atas (Global) -->
+    <nav id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Title -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i data-lucide="scale" class="w-8 h-8 accent-text"></i>
+                    <div>
+                        <h1 class="font-bold text-xl leading-tight text-color">Opsi Hukum DSI</h1>
+                        <p class="text-xs text-secondary hidden sm:block">Kajian Kritis Lender</p>
+                    </div>
+                </div>
+
+                <!-- Theme Switcher & Mobile Menu Button -->
+                <div class="flex items-center gap-2">
+                    <!-- Theme Switcher -->
+                    <div class="flex items-center p-0.5 rounded-full border" style="background-color: var(--bg-color); border-color: var(--border-color);">
+                        <button id="theme-light" class="p-1.5 rounded-full" title="Mode Terang"><i data-lucide="sun" class="w-4 h-4"></i></button>
+                        <button id="theme-dark" class="p-1.5 rounded-full" title="Mode Gelap"><i data-lucide="moon" class="w-4 h-4"></i></button>
+                        <button id="theme-system" class="p-1.5 rounded-full" title="Sistem Default"><i data-lucide="monitor" class="w-4 h-4"></i></button>
+                    </div>
+                    
+                    <!-- Mobile Menu Button (Mengontrol #mobile-nav-menu) -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full text-secondary hover:text-color hover:bg-gray-200 dark:hover:bg-slate-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                        <i data-lucide="x" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Navigasi Mobile (Dropdown - Menggunakan Navigasi dari Aside) -->
+        <div id="mobile-nav-menu" class="lg:hidden absolute top-full left-0 w-full mt-1 rounded-b-lg border-b border-x" style="border-color: var(--border-color);">
+            <nav id="mobile-nav-links" class="p-4 flex flex-col space-y-2">
+                 <!-- Link akan di-clone oleh JS -->
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Konten Utama (Layout Baru: 2 Kolom) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        
+        <!-- Navigasi Kiri (Sticky untuk Desktop) -->
+        <aside class="hidden lg:block lg:col-span-3 py-8 lg:sticky lg:top-16 h-[calc(100vh-4rem)]">
+            <nav id="aside-nav-links" class="flex flex-col space-y-2">
+                <a href="#diagnosis" class="aside-nav-link">Mengupas Krisis DSI</a>
+                <a href="#opsi-non-litigasi" class="aside-nav-link">Opsi Non-Litigasi</a>
+                <a href="#opsi-litigasi" class="aside-nav-link">Opsi Litigasi</a>
+                <a href="#skenario-khusus" class="aside-nav-link">Skenario "Ultimate" (PCV)</a>
+                <a href="#rekomendasi" class="aside-nav-link">Rekomendasi Aksi</a>
+            </nav>
+        </aside>
+
+        <!-- Konten Utama (Scrollable) -->
+        <main class="lg:col-span-9 py-8">
+                    
+            <!-- Bagian Hero / Diagnosis --><section id="diagnosis" class="scroll-mt-20 mb-16 md:mb-24">
+                <div class="relative rounded-2xl overflow-hidden p-8 md:p-12 min-h-[400px] flex flex-col justify-center text-white deep-card">
+                     <!-- Gambar Latar Belakang --><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="Tim profesional sedang rapat strategi di kantor modern" 
+                         class="absolute inset-0 w-full h-full object-cover z-0"
+                         style="animation: fadeIn 1.5s ease-out;"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1260x400/334155/e2e8f0?text=Krisis+Hukum+Finansial';">
+                     <!-- Gradient Overlay (Lebih Kuat) -->
+                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent z-10"></div>
+                     <div class="relative z-20">
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight" style="animation: fadeInUp 0.8s ease-out 0.2s backwards;">Kajian Kritis Opsi Hukum</h1>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 tracking-tight accent-text" style="animation: fadeInUp 0.8s ease-out 0.3s backwards;">Bagi Lender PT Dana Syariah Indonesia (DSI)</h2>
+                        <p class="text-lg text-slate-300 max-w-3xl" style="animation: fadeInUp 0.8s ease-out 0.4s backwards;">Sebuah analisis komprehensif yang membedah jalur non-litigasi, litigasi, dan skenario pamungkas *Piercing the Corporate Veil* (PCV) pasca krisis Q4 2025.</p>
+                     </div>
+                </div>
+                
+                <!-- Box Diagnosis Kritis -->
+                <div class="deep-card -mt-16 relative z-30 max-w-6xl mx-auto p-6 md:p-8 fade-in-up">
+                    <h3 class="text-xl font-bold mb-4 accent-red"><i data-lucide="alert-triangle" class="w-6 h-6 inline-block mr-2"></i>Mengupas Krisis DSI: Ini Bukan Gagal Bayar Biasa</h3>
+                    <p class="text-secondary mb-4">Akar persoalan krisis DSI bukanlah sekadar risiko pasar P2P yang wajar. Ini adalah kegagalan desain yang fundamental, sarat dengan unsur pelanggaran kepatuhan syariah dan hukum positif yang terindikasi kuat disengaja.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
+                            <h4 class="font-semibold text-color"><i data-lucide="dollar-sign" class="w-4 h-4 inline-block mr-1 accent-red"></i>Riba Terselubung</h4>
+                            <p class="text-sm text-secondary">Janji "Imbal Hasil" *fixed* 18.00% per tahun adalah esensi dari Riba An-Nasi'ah, yang menikam prinsip bagi hasil syariah.</p>
+                        </div>
+                        <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
+                            <h4 class="font-semibold text-color"><i data-lucide="puzzle" class="w-4 h-4 inline-block mr-1 accent-red"></i>Hilah (Trik Legal)</h4>
+                            <p class="text-sm text-secondary">Penggunaan akad Wakalah bil Ujrah teridentifikasi sebagai manuver legal untuk menyamarkan akad pinjaman (Qardh) dan lari dari tanggung jawab.</p>
+                        </div>
+                        <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
+                            <h4 class="font-semibold text-color"><i data-lucide="eye-off" class="w-4 h-4 inline-block mr-1 accent-red"></i>Tadlis (Penipuan)</h4>
+                            <p class="text-sm text-secondary">Pelabelan produk SCR 100% sebagai "Aman" adalah penyesatan fatal, karena skema ini justru menjamin kerugian pokok pasca biaya eksekusi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Kontainer Bagian --><div class="space-y-16 md:space-y-24">
+            
+                <!-- Opsi Non-Litigasi --><section id="opsi-non-litigasi" class="scroll-mt-20 fade-in-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><i data-lucide="users" class="w-8 h-8 mr-3 inline-block accent-text"></i>Peta Jalan Opsi Non-Litigasi</h2>
+                    <p class="text-center text-secondary max-w-3xl mx-auto mb-8">Jalur penyelesaian di luar pengadilan. Fokus pada negosiasi dan intervensi regulator untuk resolusi yang lebih cepat, namun sangat bergantung pada itikad baik lawan.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Card 1: Restrukturisasi -->
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Tim sedang berdiskusi di meja rapat" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Negosiasi';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-3">Musyawarah & PKPU</h3>
+                                <p class="text-sm text-secondary mb-4">Negosiasi ulang utang, baik secara sukarela (Sulh) maupun formal via Pengadilan Niaga (PKPU).</p>
+                                
+                                <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Sukarela:</strong> Berisiko mengulur waktu, bergantung itikad baik DSI.</li>
+                                    <li><strong>PKPU:</strong> Memaksa DSI buka buku, namun berisiko Pailit jika proposal ditolak.</li>
+                                    <li><strong>Waspada:</strong> Tolak tegas skema "Bail-In" yang Batal Demi Hukum.</li>
+                                </ul>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-restrukturisasi" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2: Regulator -->
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Gedung perkantoran modern OJK" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Regulator';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-3">Intervensi Regulator (OJK)</h3>
+                                <p class="text-sm text-secondary mb-4">Menggunakan kewenangan OJK sebagai regulator untuk memicu langkah remedial pemulihan dana.</p>
+                                
+                                <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Strategi:</strong> Gunakan preseden kasus Investree (Cabut Izin Usaha).</li>
+                                    <li><strong>Tuntutan:</strong> Desak OJK mencabut izin usaha DSI karena gagal sistemik.</li>
+                                    <li><strong>Hasil:</strong> Memicu Likuidasi Wajib atas seluruh aset korporasi DSI (termasuk Laba Rp 24 Miliar) untuk membayar lender.</li>
+                                </ul>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-ojk" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Opsi Litigasi --><section id="opsi-litigasi" class="scroll-mt-20 fade-in-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><i data-lucide="gavel" class="w-8 h-8 mr-3 inline-block accent-text"></i>Peta Jalan Opsi Litigasi</h2>
+                    <p class="text-center text-secondary max-w-3xl mx-auto mb-8">Jalur penyelesaian melalui pengadilan. Memerlukan waktu dan biaya, namun memiliki kekuatan hukum yang mengikat dan daya paksa yang kuat.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Card 3: Perdata -->
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Palu hakim di atas buku hukum" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Gugatan+Perdata';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-3">Gugatan Perdata (Wanprestasi)</h3>
+                                <p class="text-sm text-secondary mb-4">Menuntut ganti rugi dengan membuktikan status DSI bergeser dari Agen menjadi <strong>Dhaman (Penjamin)</strong>.</p>
+                                
+                                <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Pembuktian:</strong> Didasarkan pada bukti <strong>Tadlis</strong> (Penipuan) dan <strong>Ta'addi</strong> (Pelanggaran Mandat).</li>
+                                    <li><strong>Hasil:</strong> Mendapat putusan *inkracht* untuk menyita aset korporasi DSI.</li>
+                                </ul>
+                                
+                                <div class="p-3 rounded-lg border border-red-300 dark:border-red-700 mt-auto" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
+                                    <h4 class="font-semibold accent-red text-sm"><i data-lucide="alert-circle" class="w-4 h-4 inline-block mr-1"></i>Yurisdiksi Kritis</h4>
+                                    <p class="text-sm text-secondary">Wajib diajukan ke <strong>Pengadilan Agama Jakarta Selatan</strong> (sesuai kontrak). Gugatan ke Pengadilan Negeri akan DITOLAK.</p>
+                                </div>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-perdata" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Pidana -->
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/9394640/pexels-photo-9394640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Borgol di atas meja kayu" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Laporan+Pidana';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-3">Laporan Pidana (Alat Tekan)</h3>
+                                <p class="text-sm text-secondary mb-4">Menuntut <strong>individu pengurus/pendiri DSI</strong>. Ini adalah alat tekan (*leverage*) terkuat.</p>
+                                
+                                <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Dasar:</strong> Penipuan (Pasal 378 KUHP), Penggelapan Jabatan (Pasal 374 KUHP), UU ITE.</li>
+                                    <li><strong>Tujuan:</strong> <strong>Bukan mengembalikan uang</strong>, tapi ancaman penjara memaksa pengurus kooperatif di jalur perdata/PKPU.</li>
+                                </ul>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-pidana" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Gugatan Agunan -->
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col md:col-span-2">
+                            <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Labirin atau jalan buntu" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Prioritas+Rendah';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-3"><i data-lucide="traffic-cone" class="w-5 h-5 mr-2 inline-block accent-red"></i>Opsi Prioritas Terendah: Gugatan Agunan Borrower</h3>
+                                <p class="text-sm text-secondary mb-4">Mengejar aset *borrower* satu per satu. Opsi ini adalah jebakan yuridis yang tidak efisien dan harus dihindari.</p>
+                                
+                                <h4 class="font-semibold text-color text-sm">Analisis: Ilusi Keamanan</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Disparitas Hukum:</strong> Bank punya <strong>Hak Parate Executie</strong> (lelang langsung). Lender P2P <strong>TIDAK PUNYA</strong> hak ini.</li>
+                                    <li><strong>Proses Lender:</strong> Harus litigasi perdata penuh (2-5 tahun per debitur) hanya untuk bisa melelang 1 agunan.</li>
+                                    <li><strong>Kesimpulan:</strong> Sangat lambat, mahal, dan tidak efisien.</li>
+                                </ul>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-agunan" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skenario Khusus (Grid) --><section id="skenario-khusus" class="scroll-mt-20 fade-in-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><i data-lucide="shield-alert" class="w-8 h-8 mr-3 inline-block accent-red"></i>Skenario "Ultimate": Menuntut Aset Pribadi Pendiri</h2>
+                    <p class="text-center text-secondary max-w-3xl mx-auto mb-8">Analisis skenario pamungkas: mengeksekusi aset pribadi pendiri jika aset perusahaan DSI tidak mencukupi, melalui doktrin *Piercing the Corporate Veil* (PCV).</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/1018135/pexels-photo-1018135.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Gedung perusahaan yang terlihat kabur, melambangkan tabir perusahaan" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Tabir+Perusahaan';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-1">Konsep Dasar: Tanggung Jawab Terbatas</h3>
+                                <p class="text-sm font-semibold accent-text mb-3">Pasal 3 (1) UU PT No. 40/2007</p>
+                                <p class="text-sm text-secondary mb-4">Aset pribadi pendiri dilindungi oleh "tabir perusahaan" (*corporate veil*) dan tidak bertanggung jawab atas utang perusahaan.</p>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-pcv-konsep" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
+                            <img src="https://images.pexels.com/photos/7567434/pexels-photo-7567434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Tabir yang sedang dirobek" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Doktrin+Hukum';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-1">Doktrin Penembusan Tabir (PCV)</h3>
+                                <p class="text-sm font-semibold accent-text mb-3">Pasal 3 (2) UU PT No. 40/2007</p>
+                                <p class="text-sm text-secondary mb-4">Batasan tanggung jawab <strong>tidak berlaku</strong> jika pemegang saham terbukti bertindak dengan <strong>itikad buruk</strong> atau terlibat <strong>perbuatan melawan hukum</strong>.</p>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-pcv-doktrin" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="deep-card deep-card-hover overflow-hidden flex flex-col md:col-span-2">
+                            <img src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Papan investigasi dengan benang merah" 
+                                 class="w-full h-48 object-cover" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Investigasi+Forensik';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-xl mb-1">Peta Jalan Pembuktian PCV</h3>
+                                <p class="text-sm text-secondary mb-4">Memerlukan audit forensik untuk melacak "jejak uang" (*money trail*). Ini adalah "Opsi Nuklir": sangat sulit, lama, dan mahal, namun berpotensi *full recovery*.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h4 class="font-semibold text-color">1. Buktikan Itikad Buruk</h4>
+                                        <p class="text-sm text-secondary">Gunakan bukti *Hilah* (trik legal) dan *Tadlis* (penipuan "Aman" SCR 100%) sebagai skema yang disengaja.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-color">2. Buktikan Pencampuran Aset</h4>
+                                        <p class="text-sm text-secondary">Lacak aliran Laba Rp 24 Miliar. Jika ditarik sebagai "dividen" pribadi saat gagal bayar, itu adalah pelanggaran.</p>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-4">
+                                    <button data-open-modal="modal-pcv-pembuktian" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                
+                <!-- Rekomendasi Strategis --><section id="rekomendasi" class="scroll-mt-20 fade-in-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><i data-lucide="target" class="w-8 h-8 mr-3 inline-block accent-text"></i>Rekomendasi Aksi & Kesimpulan</h2>
+                    <div class="deep-card p-6 md:p-8 max-w-4xl mx-auto">
+                        <h3 class="text-xl font-bold text-center mb-6">Rekomendasi: "Perang Tiga Jalur" (Multi-Track Strategy)</h3>
+                        <p class="text-center text-secondary mb-6">Jangan pilih satu jalur. Lender harus mengeksekusi strategi gabungan secara simultan dan terkoordinasi untuk menciptakan tekanan hukum maksimal dari berbagai lini.</p>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="notebook-pen" class="w-4 h-4 inline-block mr-1"></i>Jalur 1: Gugatan Perdata (di Pengadilan Agama)</span>
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="hand-metal" class="w-4 h-4 inline-block mr-1"></i>Jalur 2: Laporan Pidana (Leverage ke Pengurus)</span>
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="building" class="w-4 h-4 inline-block mr-1"></i>Jalur 3: Tekanan OJK (Tuntut Cabut Izin & Likuidasi)</span>
+                        </div>
+                        
+                        <hr class="my-8" style="border-color: var(--border-color);">
+                        
+                        <h3 class="text-xl font-bold mb-4">Kesimpulan Kritis</h3>
+                        <p class="text-secondary space-y-4">
+                            <span>Krisis DSI adalah studi kasus tragis dari kegagalan *syariah-washing*. Label "syariah" dieksploitasi untuk menciptakan ilusi keamanan, menutupi praktik inti yang melanggar larangan <strong>Riba</strong> dan <strong>Tadlis</strong>.</span>
+                            <span>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran ini dapat ditransformasikan menjadi bukti yuridis untuk (1) Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong> di Pengadilan Agama, dan (2) Memenuhi unsur <strong>"itikad buruk"</strong> yang diperlukan UU PT untuk menembus tabir perusahaan.</span>
+                        </p>
+
+                        <div class="mt-auto pt-6 text-center">
+                            <button data-open-modal="modal-rekomendasi" class="text-sm font-medium accent-text hover:underline">Buka Peta Jalan Rekomendasi Lengkap &raquo;</button>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+        
+    <!-- Footer --><footer class="border-t mt-16 md:mt-24 pt-8 pb-8" style="border-color: var(--border-color);">
+        <div class="text-center text-sm text-secondary max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>©2025 Kajian Opsi Hukum Lender PT DSI</p>
+        </div>
+    </footer>
+
+    <!-- =================================================== -->
+    <!-- MODAL UNTUK KONTEN VERBATIM (POIN 4) -->
+    <!-- (Konten Modal tidak berubah, hanya ID yang dirujuk) -->
+    <!-- =================================================== -->
+
+    <!-- Modal 1: Restrukturisasi -->
+    <div id="modal-restrukturisasi" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-restrukturisasi" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="users" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Non-Litigasi (Restrukturisasi)</h3>
+            <div class="modal-body">
+                <p>Opsi non-litigasi berfokus pada penyelesaian di luar pengadilan, yang umumnya lebih cepat dan hemat biaya, namun sangat bergantung pada itikad baik pihak lawan.</p>
+                
+                <h4>Opsi 1: Restrukturisasi Sukarela (Musyawarah / Sulh)</h4>
+                <p>Opsi ini mendasarkan pada prinsip Sulh (penyelesaian damai) yang sangat dianjurkan dalam hukum Islam dan Fatwa DSN-MUI. Ini adalah negosiasi ulang kesepakatan berdasarkan prinsip kerelaan ('An Taradin Minkum).</p>
+                <ul>
+                    <li><strong>Mekanisme:</strong> Lender membentuk paguyuban yang solid dan terkoordinasi untuk bernegosiasi langsung dengan manajemen DSI.</li>
+                    <li><strong>Bentuk Solusi (Debt-to-Asset Swap):</strong> Lender setuju untuk dibayar bukan dengan uang tunai, melainkan dengan aset in-kind (misalnya, unit properti) dari proyek borrower yang macet.</li>
+                    <li><strong>Bentuk Solusi (Debt-to-Equity Swap):</strong> Piutang lender dikonversi secara sukarela menjadi kepemilikan saham di PT DSI. Opsi ini hanya boleh diambil jika lender yakin DSI masih memiliki prospek bisnis.</li>
+                    <li><strong>Risiko:</strong> Sangat bergantung pada itikad baik DSI. Proses negosiasi tidak memiliki tenggat waktu yang mengikat dan berisiko menjadi taktik DSI untuk mengulur waktu.</li>
+                </ul>
+
+                <h4>Opsi 2: Restrukturisasi Formal (PKPU - Penundaan Kewajiban Pembayaran Utang)</h4>
+                <p>Jika negosiasi sukarela gagal, lender dapat menempuh jalur restrukturisasi formal melalui Pengadilan Niaga (UU No. 37 Tahun 2004).</p>
+                <ul>
+                    <li><strong>Legal Standing:</strong> Status DSI bergeser dari Wakil (Agen) menjadi Dhaman (Penjamin) karena terbukti melakukan Tadlis dan Ta'addi. Sebagai Dhaman, DSI memiliki "utang" yang jatuh tempo sehingga lender memiliki legal standing sebagai "Kreditor".</li>
+                    <li><strong>Tujuan:</strong> Memaksa DSI masuk ke kerangka hukum formal, membuka laporan keuangan, dan mengajukan "proposal perdamaian" yang diawasi hakim.</li>
+                    <li><strong>Peluang:</strong> Jauh lebih kuat dari Opsi 1, memberikan leverage hukum yang mengikat dan tenggat waktu yang jelas (maksimal 270 hari).</li>
+                    <li><strong>Risiko (Sangat Tinggi):</strong> Ini adalah "pedang bermata dua". Jika DSI gagal mengajukan proposal, atau jika proposalnya ditolak, maka DSI akan otomatis dinyatakan PAILIT. Tingkat pengembalian dalam skenario pailit di Indonesia secara historis sangat rendah.</li>
+                </ul>
+
+                <div class="highlight-box-red mt-6">
+                    <h5><i data-lucide="ban" class="w-4 h-4 inline-block mr-1"></i>Opsi Ditolak: Penolakan Tegas Skema "Bail-In"</h5>
+                    <p class="text-sm text-secondary mt-2">Manajemen DSI dilaporkan mengusulkan skema "bail-in" sebagai solusi. Opsi ini harus ditolak secara kolektif dan tegas oleh lender.</p>
+                    <ul class="text-sm">
+                        <li><strong>Analisis Yuridis (Batal Demi Hukum):</strong> Skema Bail-in (UU PPKSK) secara eksplisit hanya untuk Bank Sistemik. PT DSI adalah P2P, BUKAN bank sistemik. Proposal ini batal demi hukum (void ab initio).</li>
+                        <li><strong>Analisis Syariah (Haram):</strong> Bail-in bersifat koersif (memaksa) kreditur menghapus piutangnya. Ini bertentangan dengan pilar utama muamalah, yaitu prinsip kerelaan ('An Taradin Minkum).</li>
+                        <li><strong>Blunder Strategis DSI:</strong> Dengan mengusulkan bail-in, DSI secara tidak sengaja telah mengakui secara implisit bahwa mereka bertindak sebagai counterparty utama (debitur), bukan sekadar agen. Ini adalah bukti krusial untuk gugatan perdata.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: OJK -->
+    <div id="modal-ojk" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-ojk" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="building" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Non-Litigasi (Intervensi OJK)</h3>
+            <div class="modal-body">
+                <p>Jalur ini berfokus pada penggunaan kewenangan OJK sebagai regulator yang mengeluarkan izin DSI. OJK telah mengambil langkah awal dengan menjatuhkan sanksi administratif berupa "pembekuan kegiatan usaha" per Oktober 2025. Namun, ini tidak secara otomatis mengembalikan dana lender.</p>
+
+                <h4>Strategi Kunci: Menggunakan Preseden Kasus Investree</h4>
+                <p>Tindakan OJK saat ini terhadap DSI bersifat punitif (menghukum) tetapi tidak remedial (memulihkan dana lender). Lender harus mendorong OJK mengambil langkah remedial.</p>
+                <ul>
+                    <li>Kasus gagal bayar P2P besar, PT Investree Radhika Jaya (Investree), telah menjadi *de facto blueprint* atau cetak biru untuk resolusi platform P2P yang gagal total di Indonesia.</li>
+                    <li>Kronologi penyelesaian Investree melibatkan gugatan perdata, proses pidana, dan puncaknya adalah tindakan tegas OJK berupa <strong>Pencabutan Izin Usaha</strong> pada Oktober 2024.</li>
+                    <li>Lender DSI harus mengajukan pengaduan resmi secara kolektif ke OJK, menuntut OJK untuk menerapkan *blueprint* yang sama: mencabut izin usaha DSI karena kegagalan sistemik dan pelanggaran perlindungan konsumen (bukti Tadlis dan Hilah).</li>
+                </ul>
+
+                <h4>Analisis Peluang Hasil: Implikasi Pencabutan Izin (Likuidasi Wajib)</h4>
+                <p>Pencabutan izin usaha adalah jalur non-litigasi terkuat untuk mengakses aset korporasi DSI.</p>
+                <ul>
+                    <li><strong>Mekanisme Hukum:</strong> Pencabutan Izin Usaha oleh OJK akan secara otomatis memicu proses <strong>Likuidasi Wajib</strong> sesuai amanat Undang-Undang No. 40 Tahun 2007 tentang Perseroan Terbatas (UU PT).</li>
+                    <li><strong>Akses ke Aset Korporasi:</strong> Likuidasi Wajib berarti Tim Likuidator akan ditunjuk untuk mengambil alih, menginventarisasi, dan menjual <strong>seluruh aset milik PT DSI</strong>.</li>
+                    <li>Ini termasuk rekening bank perusahaan, aset kantor, dan yang terpenting, <strong>Laba Komprehensif Tahun Berjalan sebesar Rp 24,01 miliar</strong> yang dilaporkan DSI pada tahun 2024.</li>
+                    <li>Hasil penjualan aset korporasi ini kemudian didistribusikan untuk membayar utang kepada para kreditur (termasuk lender).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Perdata -->
+    <div id="modal-perdata" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-perdata" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="notebook-pen" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Litigasi (Gugatan Perdata)</h3>
+            <div class="modal-body">
+                <p>Opsi ini adalah gugatan hukum untuk menuntut DSI membayar ganti rugi. Ini adalah gugatan langsung terhadap PT DSI sebagai korporasi.</p>
+
+                <h4>Landasan Tuntutan (Kunci Pembuktian): Pergeseran Status DSI</h4>
+                <p>Dasar default P2P adalah perjanjian perdata di mana DSI hanyalah Wakil (agen). Kunci gugatan ini adalah membuktikan pergeseran status DSI dari Wakil (agen) menjadi <strong>Dhaman (Penjamin)</strong>. Status ini bergeser karena DSI terbukti secara sah dan meyakinkan telah melakukan:</p>
+                <ul>
+                    <li><strong>1. Tadlis (Penipuan):</strong> Terbukti dari klaim "Aman" pada SCR 100% dan misrepresentasi data TKB 99,985% padahal terjadi gagal bayar massal.</li>
+                    <li><strong>2. Ta'addi (Pelanggaran Mandat/Kelalaian):</strong> Terbukti dari desain insentif ujrah di muka yang mendorong underwriting sembrono, yang merupakan kelalaian berat terhadap dana amanah lender.</li>
+                </ul>
+                <p>Jika status Dhaman ini terbukti di pengadilan, maka DSI (sebagai korporasi) bertanggung jawab penuh atas pengembalian seluruh dana lender.</p>
+
+                <div class="highlight-box-red mt-6">
+                    <h5><i data-lucide="alert-circle" class="w-4 h-4 inline-block mr-1"></i>TEMUAN YURISDIKSI KRITIS: Pengadilan Agama</h5>
+                    <p class="text-sm text-secondary mt-2">Analisis terhadap kontrak "PERJANJIAN WAKALAH BIL UJRAH" menemukan klausul yurisdiksi yang fatal. Pasal 25 Ayat (2) dan Ayat (7) Kontrak DSI secara eksplisit dan mengikat menyatakan bahwa PARA PIHAK sepakat untuk memilih penyelesaian sengketa hukum di <strong>Kantor Pengadilan Agama Jakarta Selatan</strong>.</p>
+                    <p class="text-sm text-secondary mt-2"><strong>Implikasi Taktis:</strong> Ini adalah temuan krusial. Setiap gugatan perdata terkait perjanjian ini yang didaftarkan ke Pengadilan Negeri (pengadilan umum) akan <strong>OTOMATIS DITOLAK</strong> oleh hakim karena cacat yurisdiksi absolut. Lender wajib menunjuk kuasa hukum yang kompeten di bidang hukum ekonomi syariah.</p>
+                </div>
+                
+                <h4>Analisis Peluang Hasil</h4>
+                <ul>
+                    <li><strong>Peluang:</strong> Jika pembuktian Dhaman berhasil, lender akan mendapatkan putusan pengadilan yang *inkracht* (berkekuatan hukum tetap).</li>
+                    <li><strong>Hasil:</strong> Putusan ini dapat digunakan sebagai dasar untuk mengajukan sita eksekusi (penyitaan) atas aset-aset korporasi DSI (rekening bank, laba Rp 24 Miliar, dll).</li>
+                    <li><strong>Kelemahan:</strong> Opsi ini tetap tidak memiliki hak Parate Executie (eksekusi langsung) atas agunan properti milik *borrower*.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Pidana -->
+    <div id="modal-pidana" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-pidana" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="hand-metal" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Litigasi (Laporan Pidana)</h3>
+            <div class="modal-body">
+                <p>Opsi ini adalah tuntutan hukum terhadap <strong>individu pengurus dan/atau pendiri DSI</strong> (*in personam*) dan dapat ditempuh secara paralel dengan jalur perdata/PKPU.</p>
+
+                <h4>Dasar Laporan Pidana</h4>
+                <p>Terdapat dugaan kuat tindak pidana yang dilakukan oleh pengurus DSI, antara lain:</p>
+                <ul>
+                    <li><strong>1. Penipuan (Tadlis) (Pasal 378 KUHP):</strong> Menggunakan rangkaian kebohongan (klaim "Aman" pada SCR 100%) dan tipu muslihat (akad Hilah) untuk menggerakkan lender menyerahkan uang.</li>
+                    <li><strong>2. Penggelapan dalam Jabatan (Pasal 374 KUHP):</strong> Terkait model Wakalah. DSI menerima dana lender sebagai pemegang amanah (Wakil), namun diduga secara lalai (ta'addi) atau sengaja menempatkan dana pada risiko yang tidak terukur demi mengejar fee (ujrah) pribadi di muka.</li>
+                    <li><strong>3. Pelanggaran UU ITE & Perlindungan Konsumen:</strong> Terkait penyebaran informasi yang menyesatkan ("Aman" 100% SCR, TKB 99,985%) melalui sistem elektronik (platform DSI).</li>
+                    <li><strong>4. Pelanggaran UU Perbankan (Pasal 46):</strong> (Mengikuti preseden Investree) Potensi *illegal fundraising* jika DSI terbukti bertindak sebagai "bank" (menghimpun dana dengan janji imbal hasil tetap) tanpa izin.</li>
+                </ul>
+
+                <h4>Analisis Peluang Hasil (Nilai Strategis)</h4>
+                <ul>
+                    <li><strong>Peluang Langsung (Rendah):</strong> Proses hukum pidana <strong>TIDAK</strong> mengembalikan uang lender secara langsung. Aset yang disita dalam kasus pidana umumnya menjadi milik negara.</li>
+                    <li><strong>Peluang Strategis (Sangat Tinggi):</strong> Ini adalah <strong>alat tekan (leverage) terkuat</strong> yang tersedia. Ancaman hukuman penjara bagi pengurus dan pendiri DSI akan menciptakan tekanan psikologis, finansial, dan reputasi yang ekstrem.</li>
+                    <li><strong>Tujuan:</strong> Menggunakan proses pidana untuk memaksa para pengurus/pendiri DSI agar kooperatif dan segera menawarkan proposal perdamaian yang adil dalam proses Non-Litigasi (Opsi 1 atau 2) atau Perdata (Opsi 4).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 5: Agunan -->
+    <div id="modal-agunan" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-agunan" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="traffic-cone" class="w-6 h-6 mr-3 inline-block accent-red"></i>Kajian: Opsi Prioritas Terendah (Gugatan Agunan)</h3>
+            <div class="modal-body">
+                <p>Pilar keamanan utama yang dipasarkan DSI adalah klaim bahwa setiap pembiayaan "Beragunan Properti". Analisis ini menemukan bahwa janji keamanan tersebut adalah ilusi yang didasarkan pada diskoneksi yuridis fundamental antara mekanisme eksekusi agunan perbankan dan P2P lending.</p>
+
+                <h4>Analisis: Ilusi Keamanan & Ketiadaan Hak Parate Executie</h4>
+                <p>Opsi ini adalah jebakan yuridis. Ketiadaan hak eksekusi langsung (parate executie) mengharuskan lender menempuh litigasi perdata penuh di Pengadilan Negeri untuk setiap borrower yang macet.</p>
+                
+                <div class="highlight-box-red mt-6">
+                    <h5>Disparitas Mekanisme Eksekusi Agunan Properti (Bank vs. P2P Lender)</h5>
+                </div>
+                
+                <h4>Perbankan (Pemegang Hak Tanggungan)</h4>
+                <ul>
+                    <li><strong>Dasar Hukum:</strong> UU No. 4 Tahun 1996 (UUHT).</li>
+                    <li><strong>Status Kreditur:</strong> Kreditur Separatis (Diutamakan).</li>
+                    <li><strong>Hak Eksekusi:</strong> <strong>Parate Executie</strong> (Eksekusi Langsung).</li>
+                    <li><strong>Kebutuhan Putusan:</strong> Tidak Perlu. Memiliki kekuatan eksekutorial.</li>
+                    <li><strong>Estimasi Waktu:</strong> Relatif Cepat (Hitungan Bulan).</li>
+                </ul>
+                
+                <h4>P2P Lending (Pemberi Dana / Lender)</h4>
+                <ul>
+                    <li><strong>Dasar Hukum:</strong> KUHPerdata (Perjanjian Perdata Murni).</li>
+                    <li><strong>Status Kreditur:</strong> Kreditur Konkuren (Umum).</li>
+                    <li><strong>Hak Eksekusi:</strong> <strong>Tidak Ada.</strong> Wajib melalui Litigasi Pengadilan.</li>
+                    <li><strong>Kebutuhan Putusan:</strong> <strong>Wajib.</strong> Memerlukan Putusan *Inkracht* & Fiat Eksekusi.</li>
+                    <li><strong>Estimasi Waktu:</strong> Sangat Lambat (Berpotensi 2-5 Tahun per debitur).</li>
+                </ul>
+
+                <h4>Kesimpulan: Opsi Prioritas Terendah</h4>
+                <p>Opsi ini sangat tidak direkomendasikan. Mendedikasikan sumber daya finansial dan waktu lender yang terbatas untuk mengejar ratusan borrower satu per satu adalah strategi yang buruk dan tidak efisien. Pemulihan harus difokuskan pada entitas sentral yang melakukan pelanggaran: PT DSI.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 6: PCV Konsep -->
+    <div id="modal-pcv-konsep" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-pcv-konsep" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="shield-off" class="w-6 h-6 mr-3 inline-block accent-red"></i>Kajian: Konsep Dasar Tanggung Jawab Terbatas</h3>
+            <div class="modal-body">
+                <p>Skenario ini menjawab permintaan khusus untuk menganalisis kemungkinan mengeksekusi aset pribadi pendiri jika aset perusahaan DSI dan agunan borrower tidak mencukupi.</p>
+
+                <h4>Konsep Dasar: Batasan Tanggung Jawab (Limited Liability)</h4>
+                <p>Dasar hukum Perseroan Terbatas (PT) di Indonesia adalah prinsip pertanggungjawaban terbatas. Sesuai <strong>Pasal 3 ayat (1) Undang-Undang No. 40 Tahun 2007 tentang Perseroan Terbatas (UU PT)</strong>, sebuah PT adalah badan hukum yang terpisah (separate legal entity) dari pendiri atau pemegang sahamnya.</p>
+                <p>Prinsipnya, pemegang saham tidak bertanggung jawab secara pribadi atas utang perusahaan melebihi modal yang disetorkannya. Aset pribadi pendiri terlindungi oleh "tabir perusahaan" (corporate veil).</p>
+                <p>Untuk menuntut aset pribadi pendiri, lender harus menembus tabir perusahaan ini melalui doktrin Piercing the Corporate Veil (PCV).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7: PCV Doktrin -->
+    <div id="modal-pcv-doktrin" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-pcv-doktrin" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="shield-alert" class="w-6 h-6 mr-3 inline-block accent-red"></i>Kajian: Doktrin Penembusan Tabir (PCV)</h3>
+            <div class="modal-body">
+                <p>Untuk menuntut aset pribadi pendiri, lender harus menembus tabir perusahaan melalui doktrin Piercing the Corporate Veil (PCV).</p>
+
+                <h4>Dasar Hukum: Pasal 3 ayat (2) UU No. 40 Tahun 2007</h4>
+                <p>Pasal ini menyatakan bahwa batasan tanggung jawab (Pasal 3(1)) <strong>tidak berlaku</strong> (artinya pemegang saham bertanggung jawab secara pribadi) jika terbukti:</p>
+                
+                <div class="highlight-box-red mt-6">
+                    <ul class="text-sm">
+                        <li>(a) Persyaratan PT sebagai badan hukum belum/tidak terpenuhi;</li>
+                        <li>(b) Pemegang saham ybs. baik langsung/tidak langsung dengan <strong>itikad buruk (bad faith)</strong> memanfaatkan Perseroan untuk <strong>kepentingan pribadi</strong>;</li>
+                        <li>(c) Pemegang saham ybs. terlibat dalam <strong>perbuatan melawan hukum</strong> (pidana atau perdata) yang dilakukan oleh Perseroan; atau</li>
+                        <li>(d) Pemegang saham ybs. baik langsung/tidak langsung secara melawan hukum <strong>menggunakan kekayaan Perseroan</strong>, yang mengakibatkan kekayaan Perseroan menjadi tidak cukup untuk melunasi utang Perseroan.</li>
+                    </ul>
+                </div>
+
+                <h4>Analisis Peluang</h4>
+                <ul>
+                    <li><strong>Peluang:</strong> Sangat Sulit. PCV adalah upaya hukum luar biasa (extraordinary). Pengadilan di Indonesia secara historis sangat berhati-hati dalam menerapkannya.</li>
+                    <li><strong>Risiko:</strong> Litigasi yang sangat panjang (berpotensi bertahun-tahun) dan sangat mahal (memerlukan tim auditor forensik).</li>
+                    <li><strong>Rekomendasi:</strong> Ini bukanlah langkah pertama. Ini adalah "Opsi Nuklir" yang dijalankan setelah Opsi Perdata dan Pidana berjalan, dan jika aset korporasi DSI terbukti tidak mencukupi.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8: PCV Pembuktian -->
+    <div id="modal-pcv-pembuktian" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-pcv-pembuktian" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="search" class="w-6 h-6 mr-3 inline-block accent-red"></i>Kajian: Peta Jalan Pembuktian PCV</h3>
+            <div class="modal-body">
+                <p>Untuk mengeksekusi aset pribadi pendiri DSI, lender harus membuktikan (dalam gugatan perdata) bahwa pendiri DSI memenuhi setidaknya salah satu unsur dalam Pasal 3(2) UU PT, khususnya poin (b), (c), dan (d).</p>
+
+                <h4>1. Membuktikan Poin (b) & (c): Itikad Buruk & Perbuatan Melawan Hukum</h4>
+                <p>Ini adalah inti dari argumen PCV. Argumentasinya adalah skema bisnis DSI yang secara sistematis dirancang untuk melakukan <strong>Hilah</strong> (trik legal), menjanjikan <strong>Riba</strong> (bunga), dan melakukan <strong>Tadlis</strong> (penipuan "Aman" SCR 100%) bukanlah "kesalahan bisnis" yang wajar.</p>
+                <p>Ini adalah skema yang disengaja yang dirancang oleh pendiri/pengurus. Tindakan Tadlis (penipuan) yang sistemik ini merupakan bukti prima facie dari "itikad buruk" (poin b) dan "perbuatan melawan hukum" (poin c) sebagaimana dimaksud oleh UU PT.</p>
+
+                <h4>2. Membuktikan Poin (d): Pencampuran Aset & Kepentingan Pribadi</h4>
+                <p>Ini memerlukan audit forensik. Kunci pembuktian terletak pada "jejak uang" (money trail) dari fee ujrah.</p>
+                <ul>
+                    <li>Model Wakalah bil Ujrah DSI memiliki insentif beracun: fee (Ujrah) dibayar 100% di muka. Laporan keuangan DSI 2024 menunjukkan Laba Rp 24 Miliar, yang sebagian besar berasal dari fee ini.</li>
+                    <li>Audit forensik harus melacak aliran dana laba Rp 24 Miliar ini.</li>
+                    <li>Jika dana tersebut terbukti ditarik oleh pendiri sebagai "dividen", "bonus", atau "pinjaman pribadi" secara tidak wajar, sementara DSI tahu bahwa mereka memiliki kewajiban gagal bayar yang membengkak kepada lender, ini dapat memenuhi unsur "menggunakan kekayaan Perseroan" yang mengakibatkan DSI "tidak cukup untuk melunasi utang" (poin d).</li>
+                </ul>
+                
+                <h4>Hipotesis Investigatif Kunci (Konflik Kepentingan)</h4>
+                <ul>
+                    <li><strong>Fakta 1:</strong> Pendiri dan Direktur Utama DSI, Taufiq Aljufri, adalah seorang pengembang perumahan (developer).</li>
+                    <li><strong>Fakta 2:</strong> Model bisnis DSI secara eksklusif berfokus pada pembiayaan developer properti.</li>
+                    <li><strong>Hipotesis:</strong> Sangat mungkin dana lender DSI disalurkan ke proyek-proyek properti yang terafiliasi atau dimiliki secara pribadi oleh Taufiq Aljufri. Jika terbukti, ini adalah skenario "alter ego" klasik dan "smoking gun" untuk gugatan PCV.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 9: Rekomendasi -->
+    <div id="modal-rekomendasi" class="modal-backdrop">
+        <div class="modal-content">
+            <button data-close-modal="modal-rekomendasi" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="target" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Rekomendasi Strategis & Peta Jalan</h3>
+            <div class="modal-body">
+                <p>Analisis ini menyimpulkan bahwa lender tidak boleh memilih salah satu opsi, tetapi harus menjalankan strategi gabungan secara simultan dan terkoordinasi untuk menciptakan tekanan hukum maksimal dari berbagai lini.</p>
+
+                <h4>Rekomendasi Strategi: "Perang Tiga Jalur" (Multi-Track Strategy)</h4>
+                
+                <div class="highlight-box-red mt-6">
+                    <h5>Peta Jalan Strategis: Rekomendasi Langkah Paralel</h5>
+                    <p class="text-sm text-secondary mt-2">Strategi yang mengandalkan satu jalur tunggal diprediksi akan gagal. Para lender harus mengadopsi strategi serangan paralel (parallel-track strategy) yang terkoordinasi.</p>
+                    <ul class="text-sm">
+                        <li><strong>Prioritas 1A (Kolektif):</strong> Segera bentuk paguyuban lender DSI yang solid dan terkoordinasi dengan satu perwakilan hukum.</li>
+                        <li><strong>Prioritas 1B (Regulatoris - Opsi 3):</strong> Gunakan paguyuban untuk mengajukan pengaduan yuridis kolektif ke OJK. Tuntutannya jelas: pencabutan izin usaha DSI dan perintah likuidasi, berdasarkan preseden Investree dan bukti Tadlis.</li>
+                        <li><strong>Prioritas 1C (Pidana - Opsi 5):</strong> Secara bersamaan, buat Laporan Pidana terpadu ke Bareskrim Polri terhadap manajemen kunci DSI atas dasar Penipuan (Pasal 378 KUHP).</li>
+                        <li><strong>Prioritas 2 (Pemulihan - Opsi 2/4):</strong> Gunakan tekanan dari Prioritas 1 sebagai leverage untuk segera mendaftarkan permohonan PKPU (Opsi 2) atau Gugatan Perdata di Pengadilan Agama (Opsi 4). Tujuannya untuk mengamankan sisa aset DSI dan memaksa audit forensik.</li>
+                        <li><strong>Prioritas Terendah (Hindari - Opsi 6):</strong> Secara tegas direkomendasikan untuk <strong>tidak</strong> menghabiskan sumber daya (waktu dan uang) untuk mengejar agunan borrower satu per satu.</li>
+                    </ul>
+                </div>
+
+                <h4>Kesimpulan Kritis</h4>
+                <p>Krisis PT Dana Syariah Indonesia adalah studi kasus tragis dari kegagalan syariah-washing. Label "syariah" dan izin OJK terbukti telah dieksploitasi untuk menciptakan ilusi keamanan, yang menutupi praktik inti yang secara substansial melanggar larangan <strong>Riba</strong> (bunga) dan <strong>Tadlis</strong> (penipuan).</p>
+                <p>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran prinsip syariah ini dapat ditransformasikan menjadi bukti yuridis untuk:</p>
+                <ol class="list-decimal pl-6 space-y-2 text-secondary">
+                    <li>Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong> di Pengadilan Agama (Opsi 4), dan</li>
+                    <li>Memenuhi unsur <strong>"itikad buruk"</strong> dan <strong>"perbuatan melawan hukum"</strong> yang diperlukan oleh UU Perseroan Terbatas untuk menembus tabir perusahaan dan mengejar aset pribadi pendirinya (Skenario PCV).</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // --- Proteksi Konten (Poin 2) ---
+            document.addEventListener('keydown', function(e) {
+                // Blok F12 (Dev Tools)
+                if (e.key === 'F12' || e.keyCode === 123) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+Shift+I (Dev Tools)
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+Shift+J (Dev Tools)
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+C (Copy)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c')) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+U (View Source)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+S (Save)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+                    e.preventDefault();
+                }
+                // Blok Ctrl+P (Print)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+                    e.preventDefault();
+                }
+            }, false);
+
+            // --- Theme Switcher Logic ---
+            const themeButtons = document.querySelectorAll('#theme-light, #theme-dark, #theme-system');
+            const htmlEl = document.documentElement;
+            const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+            const updateActiveButton = (theme) => {
+                themeButtons.forEach(btn => {
+                    // Reset all buttons
+                    btn.classList.remove('bg-accent-blue', 'text-white');
+                    btn.style.color = 'var(--text-secondary-color)';
+                    // Ganti aksen utama
+                    btn.classList.remove('bg-teal-600'); 
+                });
+                const activeBtn = document.querySelector(`#theme-${theme}`);
+                if (activeBtn) {
+                     // Style the active button
+                     activeBtn.classList.add('text-white');
+                     activeBtn.style.color = 'white';
+                     // Ganti aksen utama
+                     activeBtn.classList.add('bg-teal-600'); 
+                }
+            };
+            
+            const applyTheme = (theme) => {
+                const effectiveTheme = (theme === 'system') 
+                    ? (systemThemeQuery.matches ? 'dark' : 'light') 
+                    : theme;
+                htmlEl.setAttribute('data-theme', effectiveTheme);
+                // Perbarui juga tombol aktif saat tema sistem berubah
+                if (theme === 'system') {
+                    updateActiveButton('system');
+                }
+            };
+
+            const setTheme = (theme) => {
+                localStorage.setItem('theme', theme);
+                updateActiveButton(theme);
+                applyTheme(theme);
+            }
+            
+            themeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    let theme = 'system';
+                    if (button.id.includes('light')) theme = 'light';
+                    else if (button.id.includes('dark')) theme = 'dark';
+                    setTheme(theme);
+                });
+            });
+
+            systemThemeQuery.addEventListener('change', () => {
+                if (localStorage.getItem('theme') === 'system') {
+                    applyTheme('system');
+                }
+            });
+
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            setTheme(savedTheme);
+
+            // --- Mobile Menu Logic (Baru) ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileNavMenu = document.getElementById('mobile-nav-menu');
+            const menuIcon = mobileMenuBtn.querySelector('[data-lucide="menu"]');
+            const xIcon = mobileMenuBtn.querySelector('[data-lucide="x"]');
+            
+            // Clone aside links to mobile menu
+            const asideNavContainer = document.getElementById('aside-nav-links');
+            const mobileNavContainer = document.getElementById('mobile-nav-links');
+            if (asideNavContainer && mobileNavContainer) {
+                mobileNavContainer.innerHTML = asideNavContainer.innerHTML;
+                // Tambahkan ikon ke link mobile
+                mobileNavContainer.querySelectorAll('a').forEach(link => {
+                    link.classList.add('mobile-link'); // Tambah kelas untuk event listener
+                    link.classList.remove('aside-nav-link'); // Hapus style aside
+                    link.classList.add('flex', 'items-center', 'gap-3', 'p-2'); // Tambah style mobile
+                    let iconName = 'chevron-right'; // default
+                    if (link.href.includes('diagnosis')) iconName = 'siren';
+                    if (link.href.includes('opsi-non-litigasi')) iconName = 'users';
+                    if (link.href.includes('opsi-litigasi')) iconName = 'gavel';
+                    if (link.href.includes('skenario-khusus')) iconName = 'shield-alert';
+                    if (link.href.includes('rekomendasi')) iconName = 'target';
+                    
+                    const iconEl = document.createElement('i');
+                    iconEl.setAttribute('data-lucide', iconName);
+                    iconEl.classList.add('w-5', 'h-5', 'accent-text');
+                    link.prepend(iconEl);
+                });
+            }
+
+
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileNavMenu.classList.toggle('open');
+                menuIcon.classList.toggle('hidden');
+                xIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavMenu.classList.remove('open');
+                    menuIcon.classList.remove('hidden');
+                    xIcon.classList.add('hidden');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileNavMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                     mobileNavMenu.classList.remove('open');
+                     menuIcon.classList.remove('hidden');
+                     xIcon.classList.add('hidden');
+                }
+            });
+
+            // --- Modal Logic (Interaktif) ---
+            const openModalButtons = document.querySelectorAll('[data-open-modal]');
+            const closeModalButtons = document.querySelectorAll('[data-close-modal]');
+
+            const openModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('open');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            };
+
+            const closeModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('open');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            };
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.dataset.openModal;
+                    openModal(modalId);
+                });
+            });
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.dataset.closeModal;
+                    closeModal(modalId);
+                });
+            });
+
+            // Close modal by clicking on the backdrop
+            document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+                backdrop.addEventListener('click', (e) => {
+                    if (e.target === backdrop) {
+                        closeModal(backdrop.id);
+                    }
+                });
+            });
+
+            // --- Scrollspy for Navigation (Targeting Aside Nav) ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.aside-nav-link');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const navbar = document.getElementById('navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 70; // Get navbar height
+
+            const activateLink = (id) => {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+                mobileLinks.forEach(link => {
+                    link.classList.remove('active'); // 'active' di mobile nav
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+            
+            const scrollSpyObserver = new IntersectionObserver((entries) => {
+                let currentSectionId = null;
+                
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!currentSectionId || entry.boundingClientRect.top < document.getElementById(currentSectionId).getBoundingClientRect().top) {
+                             currentSectionId = entry.target.id;
+                        }
+                    }
+                });
+
+                if (currentSectionId) {
+                    activateLink(currentSectionId);
+                } else {
+                    let manualSectionId = 'diagnosis';
+                    let minDistance = Infinity;
+                    
+                    sections.forEach(section => {
+                        const distance = Math.abs(section.getBoundingClientRect().top - navbarHeight);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            manualSectionId = section.id;
+                        }
+                    });
+                    activateLink(manualSectionId);
+                }
+            }, { 
+                rootMargin: `-${navbarHeight}px 0px -70% 0px`, 
+                threshold: 0
+            });
+            
+            sections.forEach(section => scrollSpyObserver.observe(section));
+
+            // Aktifkan link pertama saat memuat
+            activateLink('diagnosis');
+            
+            // Re-run lucide.createIcons() after cloning them for mobile
+            lucide.createIcons();
+            
+            // --- Animation on Scroll ---
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
+                        animationObserver.unobserve(entry.target); // Hanya animasikan sekali
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.dataset.delay = `${Math.min(index * 0.1, 0.5)}s`;
+                animationObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
