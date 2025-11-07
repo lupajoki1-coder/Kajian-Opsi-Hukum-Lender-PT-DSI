@@ -10,7 +10,7 @@
     <!-- Google Fonts: Poppins --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
+        <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -18,7 +18,7 @@
 
     <style>
         :root {
-            /* Palette Warna Baru: Cerah, Profesional (Teal) */
+            /* Palette Warna: Cerah, Profesional (Teal) */
             --accent-color-main: #0d9488; /* Teal 600 */
             --accent-color-secondary: #dc2626; /* Red 600 (Hanya untuk Peringatan) */
             
@@ -238,6 +238,9 @@
             @apply font-semibold;
             color: var(--accent-color-secondary);
         }
+        .modal-body .pill {
+            @apply text-xs font-medium px-3 py-1 rounded-full inline-block;
+        }
     </style>
 </head>
 <body class="antialiased" oncontextmenu="return false;">
@@ -310,22 +313,28 @@
                      <div class="relative z-20">
                         <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight" style="animation: fadeInUp 0.8s ease-out 0.2s backwards;">Kajian Kritis Opsi Hukum</h1>
                         <h2 class="text-2xl md:text-3xl font-bold mb-4 tracking-tight accent-text" style="animation: fadeInUp 0.8s ease-out 0.3s backwards;">Bagi Lender PT Dana Syariah Indonesia (DSI)</h2>
-                        <p class="text-lg text-slate-300 max-w-3xl" style="animation: fadeInUp 0.8s ease-out 0.4s backwards;">Sebuah analisis komprehensif yang membedah jalur non-litigasi, litigasi, dan skenario pamungkas *Piercing the Corporate Veil* (PCV) pasca krisis Q4 2025.</p>
+                        <p class="text-lg text-slate-300 max-w-3xl" style="animation: fadeInUp 0.8s ease-out 0.4s backwards;">
+                            Sebuah analisis komprehensif pasca krisis Q4 2025 yang berdampak pada ~14.000 lender dengan estimasi dana tertahan Rp 600 Miliar.
+                        </p>
                      </div>
                 </div>
                 
-                <!-- Box Diagnosis Kritis -->
+                <!-- Box Diagnosis Kritis (Diperbarui dengan data var 03) -->
                 <div class="deep-card -mt-16 relative z-30 max-w-6xl mx-auto p-6 md:p-8 fade-in-up">
-                    <h3 class="text-xl font-bold mb-4 accent-red"><i data-lucide="alert-triangle" class="w-6 h-6 inline-block mr-2"></i>Mengupas Krisis DSI: Ini Bukan Gagal Bayar Biasa</h3>
+                    <h3 class="text-xl font-bold mb-4 accent-red"><i data-lucide="alert-triangle" class="w-6 h-6 inline-block mr-2"></i>Mengupas Krisis DSI: Kegagalan Tata Kelola Fatal</h3>
                     <p class="text-secondary mb-4">Akar persoalan krisis DSI bukanlah sekadar risiko pasar P2P yang wajar. Ini adalah kegagalan desain yang fundamental, sarat dengan unsur pelanggaran kepatuhan syariah dan hukum positif yang terindikasi kuat disengaja.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
-                            <h4 class="font-semibold text-color"><i data-lucide="dollar-sign" class="w-4 h-4 inline-block mr-1 accent-red"></i>Riba Terselubung</h4>
-                            <p class="text-sm text-secondary">Janji "Imbal Hasil" *fixed* 18.00% per tahun adalah esensi dari Riba An-Nasi'ah, yang menikam prinsip bagi hasil syariah.</p>
+                            <h4 class="font-semibold text-color"><i data-lucide="server-off" class="w-4 h-4 inline-block mr-1 accent-red"></i>Gagal Implementasi RDL</h4>
+                            <p class="text-sm text-secondary">Ketiadaan Rekening Dana Lender (RDL) menyebabkan commingling of funds (pencampuran dana), membuka pintu fraud, dan melanggar POJK secara fatal.</p>
                         </div>
                         <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
-                            <h4 class="font-semibold text-color"><i data-lucide="puzzle" class="w-4 h-4 inline-block mr-1 accent-red"></i>Hilah (Trik Legal)</h4>
-                            <p class="text-sm text-secondary">Penggunaan akad Wakalah bil Ujrah teridentifikasi sebagai manuver legal untuk menyamarkan akad pinjaman (Qardh) dan lari dari tanggung jawab.</p>
+                            <h4 class="font-semibold text-color"><i data-lucide="trending-up" class="w-4 h-4 inline-block mr-1 accent-red"></i>Pelanggaran Batas Pinjaman</h4>
+                            <p class="text-sm text-secondary">Terindikasi menyalurkan dana >Rp 2 Miliar per borrower, melanggar batas legal POJK dan menciptakan konsentrasi risiko yang ekstrem.</p>
+                        </div>
+                        <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
+                            <h4 class="font-semibold text-color"><i data-lucide="puzzle" class="w-4 h-4 inline-block mr-1 accent-red"></i>Hilah (Trik Legal) & Riba</h4>
+                            <p class="text-sm text-secondary">Akad Wakalah digunakan sebagai trik untuk menutupi janji "Imbal Hasil" fixed 18% yang esensinya adalah Riba An-Nasi'ah.</p>
                         </div>
                         <div class="p-4 rounded-lg" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
                             <h4 class="font-semibold text-color"><i data-lucide="eye-off" class="w-4 h-4 inline-block mr-1 accent-red"></i>Tadlis (Penipuan)</h4>
@@ -349,14 +358,14 @@
                                  class="w-full h-48 object-cover" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Negosiasi';">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-xl mb-3">Musyawarah & PKPU</h3>
+                                <h3 class="font-bold text-xl mb-3">Musyawarah & PKPU (Opsi Superior)</h3>
                                 <p class="text-sm text-secondary mb-4">Negosiasi ulang utang, baik secara sukarela (Sulh) maupun formal via Pengadilan Niaga (PKPU).</p>
                                 
                                 <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
                                 <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
-                                    <li><strong>Sukarela:</strong> Berisiko mengulur waktu, bergantung itikad baik DSI.</li>
-                                    <li><strong>PKPU:</strong> Memaksa DSI buka buku, namun berisiko Pailit jika proposal ditolak.</li>
-                                    <li><strong>Waspada:</strong> Tolak tegas skema "Bail-In" yang Batal Demi Hukum.</li>
+                                    <li><strong>PKPU:</strong> Direkomendasikan sebagai jalur perdata prioritas untuk memaksa DSI bernegosiasi dan memberi lender voting power atas proposal damai.</li>
+                                    <li><strong>Risiko:</strong> Jika proposal ditolak, DSI jatuh Pailit (hasil recovery rendah).</li>
+                                    <li><strong>Waspada:</strong> Tolak tegas skema "Bail-In" yang Batal Demi Hukum dan Haram.</li>
                                 </ul>
                                 <div class="mt-auto pt-4">
                                     <button data-open-modal="modal-restrukturisasi" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
@@ -371,14 +380,13 @@
                                  class="w-full h-48 object-cover" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Regulator';">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-xl mb-3">Intervensi Regulator (OJK)</h3>
-                                <p class="text-sm text-secondary mb-4">Menggunakan kewenangan OJK sebagai regulator untuk memicu langkah remedial pemulihan dana.</p>
+                                <h3 class="font-bold text-xl mb-3">Intervensi Regulator (OJK & DSN-MUI)</h3>
+                                <p class="text-sm text-secondary mb-4">Menggunakan kewenangan OJK sebagai regulator dan DSN-MUI sebagai otoritas syariah.</p>
                                 
                                 <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
                                 <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
-                                    <li><strong>Strategi:</strong> Gunakan preseden kasus Investree (Cabut Izin Usaha).</li>
-                                    <li><strong>Tuntutan:</strong> Desak OJK mencabut izin usaha DSI karena gagal sistemik.</li>
-                                    <li><strong>Hasil:</strong> Memicu Likuidasi Wajib atas seluruh aset korporasi DSI (termasuk Laba Rp 24 Miliar) untuk membayar lender.</li>
+                                    <li><strong>Ke OJK:</strong> Desak pencabutan izin usaha DSI (preseden Investree) untuk memicu Likuidasi Wajib atas aset korporasi DSI.</li>
+                                    <li><strong>Ke DSN-MUI:</strong> Tuntut pernyataan publik bahwa akad DSI "Fasid" (rusak) karena Riba, sebagai amunisi hukum di pengadilan.</li>
                                 </ul>
                                 <div class="mt-auto pt-4">
                                     <button data-open-modal="modal-ojk" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
@@ -401,12 +409,12 @@
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Gugatan+Perdata';">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="font-bold text-xl mb-3">Gugatan Perdata (Wanprestasi)</h3>
-                                <p class="text-sm text-secondary mb-4">Menuntut ganti rugi dengan membuktikan status DSI bergeser dari Agen menjadi <strong>Dhaman (Penjamin)</strong>.</p>
+                                <p class="text-sm text-secondary mb-4">Menuntut ganti rugi 100% dana pokok. Tuntutan ini SAH dan dapat dibenarkan.</p>
                                 
                                 <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
                                 <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
-                                    <li><strong>Pembuktian:</strong> Didasarkan pada bukti <strong>Tadlis</strong> (Penipuan) dan <strong>Ta'addi</strong> (Pelanggaran Mandat).</li>
-                                    <li><strong>Hasil:</strong> Mendapat putusan *inkracht* untuk menyita aset korporasi DSI.</li>
+                                    <li><strong>Dasar 1 (Dhaman):</strong> Buktikan status DSI bergeser dari Agen menjadi <strong>Penjamin (Dhaman)</strong> karena *Tadlis* & *Ta'addi*.</li>
+                                    <li><strong>Dasar 2 (Akad Fasid):</strong> Akad *fasid* (rusak) sejak awal karena Riba (18% *fixed*). Konsekuensinya: batal hukum, modal pokok (ra's al-mal) wajib kembali.</li>
                                 </ul>
                                 
                                 <div class="p-3 rounded-lg border border-red-300 dark:border-red-700 mt-auto" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 10%, transparent);">
@@ -421,18 +429,18 @@
 
                         <!-- Card 4: Pidana -->
                         <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
-                            <img src="https://images.pexels.com/photos/9394640/pexels-photo-9394640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                                 alt="Borgol di atas meja kayu" 
+                            <img src="https://images.pexels.com/photos/569986/pexels-photo-569986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 alt="Borgol melambangkan laporan pidana" 
                                  class="w-full h-48 object-cover" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Laporan+Pidana';">
                             <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-xl mb-3">Laporan Pidana (Alat Tekan)</h3>
-                                <p class="text-sm text-secondary mb-4">Menuntut <strong>individu pengurus/pendiri DSI</strong>. Ini adalah alat tekan (*leverage*) terkuat.</p>
+                                <h3 class="font-bold text-xl mb-3">Laporan Pidana (Alat Tekan & Restitusi)</h3>
+                                <p class="text-sm text-secondary mb-4">Menuntut <strong>individu pengurus/pendiri DSI</strong>. Ini adalah alat tekan (leverage) terkuat.</p>
                                 
                                 <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
                                 <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
-                                    <li><strong>Dasar:</strong> Penipuan (Pasal 378 KUHP), Penggelapan Jabatan (Pasal 374 KUHP), UU ITE.</li>
-                                    <li><strong>Tujuan:</strong> <strong>Bukan mengembalikan uang</strong>, tapi ancaman penjara memaksa pengurus kooperatif di jalur perdata/PKPU.</li>
+                                    <li><strong>Dasar:</strong> Penipuan (Pasal 378), Penggelapan (Pasal 372/374), UU ITE, dan <strong>TPPU</strong> (Pencucian Uang).</li>
+                                    <li><strong>Tujuan Ganda:</strong> (1) Menekan pelaku agar kooperatif di jalur PKPU. (2) Membuka opsi <strong>Restitusi</strong> (pengembalian aset sitaan ke *lender*), bukan disita negara.</li>
                                 </ul>
                                 <div class="mt-auto pt-4">
                                     <button data-open-modal="modal-pidana" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
@@ -444,11 +452,11 @@
                         <div class="deep-card deep-card-hover overflow-hidden flex flex-col md:col-span-2">
                             <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                                  alt="Labirin atau jalan buntu" 
-                                 class="w-full h-48 object-cover" 
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Prioritas+Rendah';">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="font-bold text-xl mb-3"><i data-lucide="traffic-cone" class="w-5 h-5 mr-2 inline-block accent-red"></i>Opsi Prioritas Terendah: Gugatan Agunan Borrower</h3>
-                                <p class="text-sm text-secondary mb-4">Mengejar aset *borrower* satu per satu. Opsi ini adalah jebakan yuridis yang tidak efisien dan harus dihindari.</p>
+                                <h4 class="font-semibold text-color text-sm">Poin Kunci</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
+                                    <li><strong>Dasar 1 (Dhaman):</strong> Buktikan status DSI bergeser dari Agen menjadi <strong>Penjamin (Dhaman)</strong> karena Tadlis & Ta'addi.</li>
+                                    <li><strong>Dasar 2 (Akad Fasid):</strong> Akad fasid (rusak) sejak awal karena Riba (18% fixed). Konsekuensinya: batal hukum, modal pokok (ra's al-mal) wajib kembali.</li>
+                                </ul>
                                 
                                 <h4 class="font-semibold text-color text-sm">Analisis: Ilusi Keamanan</h4>
                                 <ul class="list-disc pl-5 space-y-1 text-sm text-secondary mb-3">
@@ -478,7 +486,7 @@
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="font-bold text-xl mb-1">Konsep Dasar: Tanggung Jawab Terbatas</h3>
                                 <p class="text-sm font-semibold accent-text mb-3">Pasal 3 (1) UU PT No. 40/2007</p>
-                                <p class="text-sm text-secondary mb-4">Aset pribadi pendiri dilindungi oleh "tabir perusahaan" (*corporate veil*) dan tidak bertanggung jawab atas utang perusahaan.</p>
+                                <p class="text-sm text-secondary mb-4">Aset pribadi pendiri dilindungi oleh "tabir perusahaan" (corporate veil) dan tidak bertanggung jawab atas utang perusahaan.</p>
                                 <div class="mt-auto pt-4">
                                     <button data-open-modal="modal-pcv-konsep" class="w-full text-sm font-medium accent-text hover:underline">Buka Kajian Lengkap &raquo;</button>
                                 </div>
@@ -507,15 +515,15 @@
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Investigasi+Forensik';">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="font-bold text-xl mb-1">Peta Jalan Pembuktian PCV</h3>
-                                <p class="text-sm text-secondary mb-4">Memerlukan audit forensik untuk melacak "jejak uang" (*money trail*). Ini adalah "Opsi Nuklir": sangat sulit, lama, dan mahal, namun berpotensi *full recovery*.</p>
+                                <p class="text-sm text-secondary mb-4">Memerlukan audit forensik (dipicu oleh PKPU/Pidana) untuk melacak "jejak uang" (money trail). Ini adalah "Opsi Nuklir": sulit, tapi berpotensi full recovery.</p>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <h4 class="font-semibold text-color">1. Buktikan Itikad Buruk</h4>
-                                        <p class="text-sm text-secondary">Gunakan bukti *Hilah* (trik legal) dan *Tadlis* (penipuan "Aman" SCR 100%) sebagai skema yang disengaja.</p>
+                                        <h4 class="font-semibold text-color">1. Bukti "Alter Ego" (Fatal)</h4>
+                                        <p class="text-sm text-secondary">Gunakan bukti <strong>ketiadaan RDL</strong> (commingling of funds) sebagai bukti utama bahwa DSI hanyalah "topeng" (Alter Ego) bagi pengurus.</p>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-color">2. Buktikan Pencampuran Aset</h4>
-                                        <p class="text-sm text-secondary">Lacak aliran Laba Rp 24 Miliar. Jika ditarik sebagai "dividen" pribadi saat gagal bayar, itu adalah pelanggaran.</p>
+                                        <h4 class="font-semibold text-color">2. Bukti Itikad Buruk</h4>
+                                        <p class="text-sm text-secondary">Gunakan bukti Hilah (trik legal) dan Tadlis (penipuan "Aman" SCR 100%) sebagai skema yang disengaja.</p>
                                     </div>
                                 </div>
                                 <div class="mt-auto pt-4">
@@ -530,20 +538,20 @@
                 <!-- Rekomendasi Strategis --><section id="rekomendasi" class="scroll-mt-20 fade-in-up">
                     <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><i data-lucide="target" class="w-8 h-8 mr-3 inline-block accent-text"></i>Rekomendasi Aksi & Kesimpulan</h2>
                     <div class="deep-card p-6 md:p-8 max-w-4xl mx-auto">
-                        <h3 class="text-xl font-bold text-center mb-6">Rekomendasi: "Perang Tiga Jalur" (Multi-Track Strategy)</h3>
+                        <h3 class="text-xl font-bold text-center mb-6">Rekomendasi: Strategi Jalur Ganda (Dual-Track)</h3>
                         <p class="text-center text-secondary mb-6">Jangan pilih satu jalur. Lender harus mengeksekusi strategi gabungan secara simultan dan terkoordinasi untuk menciptakan tekanan hukum maksimal dari berbagai lini.</p>
                         <div class="flex flex-wrap gap-4 justify-center">
-                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="notebook-pen" class="w-4 h-4 inline-block mr-1"></i>Jalur 1: Gugatan Perdata (di Pengadilan Agama)</span>
-                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="hand-metal" class="w-4 h-4 inline-block mr-1"></i>Jalur 2: Laporan Pidana (Leverage ke Pengurus)</span>
-                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="building" class="w-4 h-4 inline-block mr-1"></i>Jalur 3: Tekanan OJK (Tuntut Cabut Izin & Likuidasi)</span>
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="shield-check" class="w-4 h-4 inline-block mr-1"></i>Prioritas 1: PKPU (Restrukturisasi)</span>
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="hand-metal" class="w-4 h-4 inline-block mr-1"></i>Prioritas 2: PIDANA (Tekanan & Restitusi)</span>
+                            <span class="pill text-base" style="background-color: color-mix(in srgb, var(--accent-color-secondary) 15%, transparent); color: var(--accent-color-secondary);"><i data-lucide="building" class="w-4 h-4 inline-block mr-1"></i>Jalur Paralel: Tekanan OJK & DSN-MUI</span>
                         </div>
                         
                         <hr class="my-8" style="border-color: var(--border-color);">
                         
                         <h3 class="text-xl font-bold mb-4">Kesimpulan Kritis</h3>
                         <p class="text-secondary space-y-4">
-                            <span>Krisis DSI adalah studi kasus tragis dari kegagalan *syariah-washing*. Label "syariah" dieksploitasi untuk menciptakan ilusi keamanan, menutupi praktik inti yang melanggar larangan <strong>Riba</strong> dan <strong>Tadlis</strong>.</span>
-                            <span>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran ini dapat ditransformasikan menjadi bukti yuridis untuk (1) Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong> di Pengadilan Agama, dan (2) Memenuhi unsur <strong>"itikad buruk"</strong> yang diperlukan UU PT untuk menembus tabir perusahaan.</span>
+                            <span>Krisis DSI adalah studi kasus tragis dari kegagalan syariah-washing. Label "syariah" dieksploitasi untuk menciptakan ilusi keamanan, menutupi praktik inti yang melanggar larangan <strong>Riba</strong> dan <strong>Tadlis</strong>.</span>
+                            <span>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) dan kegagalan tata kelola (ketiadaan RDL) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran ini dapat ditransformasikan menjadi bukti yuridis untuk: (1) Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong>, (2) Membatalkan akad sebagai <strong>Akad Fasid</strong>, dan (3) Memenuhi unsur <strong>"itikad buruk"</strong> dan <strong>"Alter Ego"</strong> untuk menembus tabir perusahaan (PCV).</span>
                         </p>
 
                         <div class="mt-auto pt-6 text-center">
@@ -558,13 +566,13 @@
         
     <!-- Footer --><footer class="border-t mt-16 md:mt-24 pt-8 pb-8" style="border-color: var(--border-color);">
         <div class="text-center text-sm text-secondary max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p>©2025 Kajian Opsi Hukum Lender PT DSI</p>
+            <!-- Credit title dihapus sesuai permintaan -->
         </div>
     </footer>
 
     <!-- =================================================== -->
     <!-- MODAL UNTUK KONTEN VERBATIM (POIN 4) -->
-    <!-- (Konten Modal tidak berubah, hanya ID yang dirujuk) -->
+    <!-- (Konten Modal Diperbarui dengan Data Var 03) -->
     <!-- =================================================== -->
 
     <!-- Modal 1: Restrukturisasi -->
@@ -576,21 +584,20 @@
                 <p>Opsi non-litigasi berfokus pada penyelesaian di luar pengadilan, yang umumnya lebih cepat dan hemat biaya, namun sangat bergantung pada itikad baik pihak lawan.</p>
                 
                 <h4>Opsi 1: Restrukturisasi Sukarela (Musyawarah / Sulh)</h4>
-                <p>Opsi ini mendasarkan pada prinsip Sulh (penyelesaian damai) yang sangat dianjurkan dalam hukum Islam dan Fatwa DSN-MUI. Ini adalah negosiasi ulang kesepakatan berdasarkan prinsip kerelaan ('An Taradin Minkum).</p>
+                <p>Opsi ini mendasarkan pada prinsip Sulh (penyelesaian damai). Ini adalah negosiasi ulang kesepakatan berdasarkan prinsip kerelaan ('An Taradin Minkum).</p>
                 <ul>
                     <li><strong>Mekanisme:</strong> Lender membentuk paguyuban yang solid dan terkoordinasi untuk bernegosiasi langsung dengan manajemen DSI.</li>
-                    <li><strong>Bentuk Solusi (Debt-to-Asset Swap):</strong> Lender setuju untuk dibayar bukan dengan uang tunai, melainkan dengan aset in-kind (misalnya, unit properti) dari proyek borrower yang macet.</li>
-                    <li><strong>Bentuk Solusi (Debt-to-Equity Swap):</strong> Piutang lender dikonversi secara sukarela menjadi kepemilikan saham di PT DSI. Opsi ini hanya boleh diambil jika lender yakin DSI masih memiliki prospek bisnis.</li>
+                    <li><strong>Bentuk Solusi:</strong> Dapat berupa Debt-to-Asset Swap (tukar utang dengan unit properti) atau Debt-to-Equity Swap (tukar utang dengan saham DSI).</li>
                     <li><strong>Risiko:</strong> Sangat bergantung pada itikad baik DSI. Proses negosiasi tidak memiliki tenggat waktu yang mengikat dan berisiko menjadi taktik DSI untuk mengulur waktu.</li>
                 </ul>
 
-                <h4>Opsi 2: Restrukturisasi Formal (PKPU - Penundaan Kewajiban Pembayaran Utang)</h4>
-                <p>Jika negosiasi sukarela gagal, lender dapat menempuh jalur restrukturisasi formal melalui Pengadilan Niaga (UU No. 37 Tahun 2004).</p>
+                <h4>Opsi 2: Restrukturisasi Formal (PKPU) - REKOMENDASI UTAMA</h4>
+                <p>Ini adalah strategi perdata superior bagi lender. PKPU (UU No. 37 Tahun 2004) adalah proses restrukturisasi, bukan likuidasi, yang diawasi Pengadilan Niaga.</p>
                 <ul>
                     <li><strong>Legal Standing:</strong> Status DSI bergeser dari Wakil (Agen) menjadi Dhaman (Penjamin) karena terbukti melakukan Tadlis dan Ta'addi. Sebagai Dhaman, DSI memiliki "utang" yang jatuh tempo sehingga lender memiliki legal standing sebagai "Kreditor".</li>
                     <li><strong>Tujuan:</strong> Memaksa DSI masuk ke kerangka hukum formal, membuka laporan keuangan, dan mengajukan "proposal perdamaian" yang diawasi hakim.</li>
-                    <li><strong>Peluang:</strong> Jauh lebih kuat dari Opsi 1, memberikan leverage hukum yang mengikat dan tenggat waktu yang jelas (maksimal 270 hari).</li>
-                    <li><strong>Risiko (Sangat Tinggi):</strong> Ini adalah "pedang bermata dua". Jika DSI gagal mengajukan proposal, atau jika proposalnya ditolak, maka DSI akan otomatis dinyatakan PAILIT. Tingkat pengembalian dalam skenario pailit di Indonesia secara historis sangat rendah.</li>
+                    <li><strong>Keuntungan:</strong> Ini adalah forum legal untuk menegosiasikan skema pemulihan terbaik (cicilan, *debt-to-asset swap*, dll). Lender (melalui Paguyuban) memegang *voting power* untuk menerima atau menolak proposal DSI.</li>
+                    <li><strong>Risiko:</strong> Jika DSI gagal mengajukan proposal, atau jika proposalnya ditolak, maka DSI akan otomatis dinyatakan PAILIT (risiko *fire sale* aset dan *recovery rate* rendah).</li>
                 </ul>
 
                 <div class="highlight-box-red mt-6">
@@ -599,7 +606,7 @@
                     <ul class="text-sm">
                         <li><strong>Analisis Yuridis (Batal Demi Hukum):</strong> Skema Bail-in (UU PPKSK) secara eksplisit hanya untuk Bank Sistemik. PT DSI adalah P2P, BUKAN bank sistemik. Proposal ini batal demi hukum (void ab initio).</li>
                         <li><strong>Analisis Syariah (Haram):</strong> Bail-in bersifat koersif (memaksa) kreditur menghapus piutangnya. Ini bertentangan dengan pilar utama muamalah, yaitu prinsip kerelaan ('An Taradin Minkum).</li>
-                        <li><strong>Blunder Strategis DSI:</strong> Dengan mengusulkan bail-in, DSI secara tidak sengaja telah mengakui secara implisit bahwa mereka bertindak sebagai counterparty utama (debitur), bukan sekadar agen. Ini adalah bukti krusial untuk gugatan perdata.</li>
+                        <li><strong>Blunder Strategis DSI:</strong> Dengan mengusulkan bail-in, DSI secara tidak sengaja telah mengakui secara implisit bahwa mereka bertindak sebagai *counterparty* utama (debitur), bukan sekadar agen. Ini adalah bukti krusial untuk gugatan perdata.</li>
                     </ul>
                 </div>
             </div>
@@ -610,25 +617,23 @@
     <div id="modal-ojk" class="modal-backdrop">
         <div class="modal-content">
             <button data-close-modal="modal-ojk" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
-            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="building" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Non-Litigasi (Intervensi OJK)</h3>
+            <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="building" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Non-Litigasi (Intervensi Regulator)</h3>
             <div class="modal-body">
-                <p>Jalur ini berfokus pada penggunaan kewenangan OJK sebagai regulator yang mengeluarkan izin DSI. OJK telah mengambil langkah awal dengan menjatuhkan sanksi administratif berupa "pembekuan kegiatan usaha" per Oktober 2025. Namun, ini tidak secara otomatis mengembalikan dana lender.</p>
+                <p>Jalur ini berfokus pada penggunaan kewenangan OJK sebagai regulator dan DSN-MUI sebagai otoritas syariah. OJK telah menjatuhkan sanksi "pembekuan kegiatan usaha" (PKU) pada 15 Oktober 2025.</p>
 
-                <h4>Strategi Kunci: Menggunakan Preseden Kasus Investree</h4>
-                <p>Tindakan OJK saat ini terhadap DSI bersifat punitif (menghukum) tetapi tidak remedial (memulihkan dana lender). Lender harus mendorong OJK mengambil langkah remedial.</p>
+                <h4>Strategi Kunci: Tekanan Regulatoris dan Politik</h4>
+                <p>Tindakan OJK saat ini bersifat punitif (menghukum) tetapi tidak remedial (memulihkan dana). Lender harus mendorong OJK mengambil langkah remedial.</p>
                 <ul>
-                    <li>Kasus gagal bayar P2P besar, PT Investree Radhika Jaya (Investree), telah menjadi *de facto blueprint* atau cetak biru untuk resolusi platform P2P yang gagal total di Indonesia.</li>
-                    <li>Kronologi penyelesaian Investree melibatkan gugatan perdata, proses pidana, dan puncaknya adalah tindakan tegas OJK berupa <strong>Pencabutan Izin Usaha</strong> pada Oktober 2024.</li>
-                    <li>Lender DSI harus mengajukan pengaduan resmi secara kolektif ke OJK, menuntut OJK untuk menerapkan *blueprint* yang sama: mencabut izin usaha DSI karena kegagalan sistemik dan pelanggaran perlindungan konsumen (bukti Tadlis dan Hilah).</li>
+                    <li><strong>Ke OJK (Gunakan Preseden Investree):</strong> Lender DSI harus mengajukan pengaduan resmi kolektif ke OJK, menuntut OJK untuk menerapkan *blueprint* yang sama dengan kasus Investree: <strong>mencabut izin usaha DSI</strong> karena kegagalan sistemik dan pelanggaran perlindungan konsumen (bukti Tadlis dan Hilah).</li>
+                    <li><strong>Ke DSN-MUI (Tuntut Fatwa):</strong> Menuntut pertanggungjawaban Dewan Pengawas Syariah (DPS) yang gagal dan mendesak DSN-MUI mengeluarkan pernyataan publik atau fatwa yang menyatakan akad DSI (dengan janji 18% tetap) adalah <strong>fasid (rusak) karena mengandung Riba</strong>. Pernyataan ini akan menjadi amunisi hukum yang sangat kuat dalam proses litigasi (PKPU/Pengadilan Agama).</li>
                 </ul>
 
                 <h4>Analisis Peluang Hasil: Implikasi Pencabutan Izin (Likuidasi Wajib)</h4>
                 <p>Pencabutan izin usaha adalah jalur non-litigasi terkuat untuk mengakses aset korporasi DSI.</p>
                 <ul>
-                    <li><strong>Mekanisme Hukum:</strong> Pencabutan Izin Usaha oleh OJK akan secara otomatis memicu proses <strong>Likuidasi Wajib</strong> sesuai amanat Undang-Undang No. 40 Tahun 2007 tentang Perseroan Terbatas (UU PT).</li>
-                    <li><strong>Akses ke Aset Korporasi:</strong> Likuidasi Wajib berarti Tim Likuidator akan ditunjuk untuk mengambil alih, menginventarisasi, dan menjual <strong>seluruh aset milik PT DSI</strong>.</li>
-                    <li>Ini termasuk rekening bank perusahaan, aset kantor, dan yang terpenting, <strong>Laba Komprehensif Tahun Berjalan sebesar Rp 24,01 miliar</strong> yang dilaporkan DSI pada tahun 2024.</li>
-                    <li>Hasil penjualan aset korporasi ini kemudian didistribusikan untuk membayar utang kepada para kreditur (termasuk lender).</li>
+                    <li><strong>Mekanisme Hukum:</strong> Pencabutan Izin Usaha oleh OJK akan secara otomatis memicu proses <strong>Likuidasi Wajib</strong> (UU PT No. 40/2007).</li>
+                    <li><strong>Akses ke Aset Korporasi:</strong> Likuidasi Wajib berarti Tim Likuidator akan ditunjuk untuk menjual <strong>seluruh aset milik PT DSI</strong> (bukan hanya agunan *borrower*).</li>
+                    <li>Ini termasuk rekening bank perusahaan, aset kantor, dan yang terpenting, <strong>Laba Komprehensif Tahun Berjalan sebesar Rp 24,01 miliar</strong> (data 2024). Hasil penjualan aset korporasi ini kemudian didistribusikan untuk membayar utang kepada para kreditur (termasuk lender).</li>
                 </ul>
             </div>
         </div>
@@ -640,28 +645,32 @@
             <button data-close-modal="modal-perdata" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
             <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="notebook-pen" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Litigasi (Gugatan Perdata)</h3>
             <div class="modal-body">
-                <p>Opsi ini adalah gugatan hukum untuk menuntut DSI membayar ganti rugi. Ini adalah gugatan langsung terhadap PT DSI sebagai korporasi.</p>
+                <p>Opsi ini adalah gugatan hukum untuk menuntut DSI membayar ganti rugi 100% dana pokok. Tuntutan ini memiliki dasar hukum dan syariah yang sangat kuat, membantah argumen "risiko bisnis" yang mungkin diajukan DSI.</p>
 
                 <h4>Landasan Tuntutan (Kunci Pembuktian): Pergeseran Status DSI</h4>
-                <p>Dasar default P2P adalah perjanjian perdata di mana DSI hanyalah Wakil (agen). Kunci gugatan ini adalah membuktikan pergeseran status DSI dari Wakil (agen) menjadi <strong>Dhaman (Penjamin)</strong>. Status ini bergeser karena DSI terbukti secara sah dan meyakinkan telah melakukan:</p>
+                <p>Kunci gugatan ini adalah membuktikan pergeseran status DSI dari Wakil (agen) menjadi <strong>Dhaman (Penjamin)</strong>, atau membuktikan bahwa akad batal demi hukum.</p>
+                
+                <h4>Argumen 1: DSI Melakukan Fraud/Ta'addi (Status Menjadi Dhaman)</h4>
+                <p>Prinsip syariah dan hukum perdata (wanprestasi) menegaskan, jika seorang Wakil (DSI) terbukti melakukan:</p>
                 <ul>
-                    <li><strong>1. Tadlis (Penipuan):</strong> Terbukti dari klaim "Aman" pada SCR 100% dan misrepresentasi data TKB 99,985% padahal terjadi gagal bayar massal.</li>
-                    <li><strong>2. Ta'addi (Pelanggaran Mandat/Kelalaian):</strong> Terbukti dari desain insentif ujrah di muka yang mendorong underwriting sembrono, yang merupakan kelalaian berat terhadap dana amanah lender.</li>
+                    <li><strong>Tadlis (Penipuan):</strong> Klaim "Aman" pada SCR 100%, misrepresentasi data TKB.</li>
+                    <li><strong>Ta'addi (Pelanggaran Mandat):</strong> Melanggar batas POJK >Rp 2 Miliar.</li>
+                    <li><strong>Tafrith (Kelalaian Berat):</strong> Ketiadaan implementasi RDL.</li>
                 </ul>
-                <p>Jika status Dhaman ini terbukti di pengadilan, maka DSI (sebagai korporasi) bertanggung jawab penuh atas pengembalian seluruh dana lender.</p>
+                <p>Maka statusnya berubah menjadi <strong>Dhaman (Penanggung Jawab Penuh)</strong>. Sebagai Dhaman, DSI wajib mengganti seluruh kerugian lender.</p>
+
+                <h4>Argumen 2: Akad Fasid (Rusak karena Riba)</h4>
+                <p>Akad Wakalah bil Ujrah teridentifikasi <strong>fasid (rusak) sejak awal (ab initio)</strong> karena mengandung unsur Riba yang fundamental (janji fixed rate 18%).</p>
+                <ul>
+                    <li><strong>Konsekuensi Hukum Syariah:</strong> Transaksi wajib dibatalkan (faskh) dan kedua belah pihak dikembalikan ke posisi semula.</li>
+                    <li><strong>Hasil:</strong> DSI wajib mengembalikan seluruh modal pokok (ra's al-mal) yang telah diterimanya kepada lender.</li>
+                </ul>
 
                 <div class="highlight-box-red mt-6">
                     <h5><i data-lucide="alert-circle" class="w-4 h-4 inline-block mr-1"></i>TEMUAN YURISDIKSI KRITIS: Pengadilan Agama</h5>
-                    <p class="text-sm text-secondary mt-2">Analisis terhadap kontrak "PERJANJIAN WAKALAH BIL UJRAH" menemukan klausul yurisdiksi yang fatal. Pasal 25 Ayat (2) dan Ayat (7) Kontrak DSI secara eksplisit dan mengikat menyatakan bahwa PARA PIHAK sepakat untuk memilih penyelesaian sengketa hukum di <strong>Kantor Pengadilan Agama Jakarta Selatan</strong>.</p>
-                    <p class="text-sm text-secondary mt-2"><strong>Implikasi Taktis:</strong> Ini adalah temuan krusial. Setiap gugatan perdata terkait perjanjian ini yang didaftarkan ke Pengadilan Negeri (pengadilan umum) akan <strong>OTOMATIS DITOLAK</strong> oleh hakim karena cacat yurisdiksi absolut. Lender wajib menunjuk kuasa hukum yang kompeten di bidang hukum ekonomi syariah.</p>
+                    <p class="text-sm text-secondary mt-2">Analisis terhadap kontrak "PERJANJIAN WAKALAH BIL UJRAH" (Pasal 25 Ayat 2 & 7) secara eksplisit dan mengikat menyatakan bahwa PARA PIHAK sepakat memilih penyelesaian sengketa hukum di <strong>Kantor Pengadilan Agama Jakarta Selatan</strong>.</p>
+                    <p class="text-sm text-secondary mt-2"><strong>Implikasi Taktis:</strong> Ini adalah temuan krusial. Setiap gugatan perdata terkait perjanjian ini yang didaftarkan ke Pengadilan Negeri (pengadilan umum) akan <strong>OTOMATIS DITOLAK</strong> oleh hakim karena cacat yurisdiksi absolut.</p>
                 </div>
-                
-                <h4>Analisis Peluang Hasil</h4>
-                <ul>
-                    <li><strong>Peluang:</strong> Jika pembuktian Dhaman berhasil, lender akan mendapatkan putusan pengadilan yang *inkracht* (berkekuatan hukum tetap).</li>
-                    <li><strong>Hasil:</strong> Putusan ini dapat digunakan sebagai dasar untuk mengajukan sita eksekusi (penyitaan) atas aset-aset korporasi DSI (rekening bank, laba Rp 24 Miliar, dll).</li>
-                    <li><strong>Kelemahan:</strong> Opsi ini tetap tidak memiliki hak Parate Executie (eksekusi langsung) atas agunan properti milik *borrower*.</li>
-                </ul>
             </div>
         </div>
     </div>
@@ -672,22 +681,22 @@
             <button data-close-modal="modal-pidana" class="modal-close-btn"><i data-lucide="x" class="w-5 h-5"></i></button>
             <h3 class="text-2xl font-bold mb-4 text-color"><i data-lucide="hand-metal" class="w-6 h-6 mr-3 inline-block accent-text"></i>Kajian: Opsi Litigasi (Laporan Pidana)</h3>
             <div class="modal-body">
-                <p>Opsi ini adalah tuntutan hukum terhadap <strong>individu pengurus dan/atau pendiri DSI</strong> (*in personam*) dan dapat ditempuh secara paralel dengan jalur perdata/PKPU.</p>
+                <p>Opsi ini adalah tuntutan hukum terhadap <strong>individu pengurus dan/atau pendiri DSI</strong> (in personam) dan dapat ditempuh secara paralel dengan jalur perdata (PKPU) untuk menekan mereka secara personal.</p>
 
-                <h4>Dasar Laporan Pidana</h4>
+                <h4>Dasar Laporan Pidana (Sangat Kuat)</h4>
                 <p>Terdapat dugaan kuat tindak pidana yang dilakukan oleh pengurus DSI, antara lain:</p>
                 <ul>
-                    <li><strong>1. Penipuan (Tadlis) (Pasal 378 KUHP):</strong> Menggunakan rangkaian kebohongan (klaim "Aman" pada SCR 100%) dan tipu muslihat (akad Hilah) untuk menggerakkan lender menyerahkan uang.</li>
-                    <li><strong>2. Penggelapan dalam Jabatan (Pasal 374 KUHP):</strong> Terkait model Wakalah. DSI menerima dana lender sebagai pemegang amanah (Wakil), namun diduga secara lalai (ta'addi) atau sengaja menempatkan dana pada risiko yang tidak terukur demi mengejar fee (ujrah) pribadi di muka.</li>
-                    <li><strong>3. Pelanggaran UU ITE & Perlindungan Konsumen:</strong> Terkait penyebaran informasi yang menyesatkan ("Aman" 100% SCR, TKB 99,985%) melalui sistem elektronik (platform DSI).</li>
-                    <li><strong>4. Pelanggaran UU Perbankan (Pasal 46):</strong> (Mengikuti preseden Investree) Potensi *illegal fundraising* jika DSI terbukti bertindak sebagai "bank" (menghimpun dana dengan janji imbal hasil tetap) tanpa izin.</li>
+                    <li><strong>1. Penipuan (Tadlis) (Pasal 378 KUHP):</strong> Menggunakan rangkaian kebohongan (klaim "Aman" pada SCR 100%, data TKB90 palsu) dan tipu muslihat (akad Hilah) untuk menggerakkan lender menyerahkan uang.</li>
+                    <li><strong>2. Penggelapan (Pasal 372 KUHP / Jabatan 374 KUHP):</strong> Terkait commingling of funds. Jika terbukti dana lender (yang seharusnya di RDL) digunakan untuk operasional DSI.</li>
+                    <li><strong>3. Tindak Pidana Pencucian Uang (TPPU) (UU 8/2010):</strong> Jika DSI (Taufiq Aljufri dkk) terbukti menyamarkan atau menyembunyikan uang hasil penipuan/penggelapan.</li>
+                    <li><strong>4. Pelanggaran UU ITE & Perlindungan Konsumen:</strong> Terkait penyebaran informasi yang menyesatkan melalui sistem elektronik.</li>
                 </ul>
 
                 <h4>Analisis Peluang Hasil (Nilai Strategis)</h4>
+                <p>Kekhawatiran bahwa aset akan disita negara adalah <strong>KURANG TEPAT</strong> dan kontra-produktif.</p>
                 <ul>
-                    <li><strong>Peluang Langsung (Rendah):</strong> Proses hukum pidana <strong>TIDAK</strong> mengembalikan uang lender secara langsung. Aset yang disita dalam kasus pidana umumnya menjadi milik negara.</li>
-                    <li><strong>Peluang Strategis (Sangat Tinggi):</strong> Ini adalah <strong>alat tekan (leverage) terkuat</strong> yang tersedia. Ancaman hukuman penjara bagi pengurus dan pendiri DSI akan menciptakan tekanan psikologis, finansial, dan reputasi yang ekstrem.</li>
-                    <li><strong>Tujuan:</strong> Menggunakan proses pidana untuk memaksa para pengurus/pendiri DSI agar kooperatif dan segera menawarkan proposal perdamaian yang adil dalam proses Non-Litigasi (Opsi 1 atau 2) atau Perdata (Opsi 4).</li>
+                    <li><strong>Tujuan 1 (Leverage):</strong> Ini adalah <strong>alat tekan (leverage) terkuat</strong>. Ancaman hukuman penjara bagi pengurus (Taufiq Aljufri, Salman, dkk) akan menciptakan tekanan ekstrem untuk memaksa mereka kooperatif di jalur PKPU.</li>
+                    <li><strong>Tujuan 2 (Restitusi):</strong> Dalam sistem hukum pidana modern (khususnya TPPU), korban (lender) memiliki hak untuk mengajukan <strong>Restitusi (ganti rugi)</strong>. Aset yang disita penyidik dari para pelaku dapat dikembalikan kepada korban (lender) melalui penetapan hakim, bukan otomatis dirampas untuk negara.</li>
                 </ul>
             </div>
         </div>
@@ -722,7 +731,7 @@
                     <li><strong>Dasar Hukum:</strong> KUHPerdata (Perjanjian Perdata Murni).</li>
                     <li><strong>Status Kreditur:</strong> Kreditur Konkuren (Umum).</li>
                     <li><strong>Hak Eksekusi:</strong> <strong>Tidak Ada.</strong> Wajib melalui Litigasi Pengadilan.</li>
-                    <li><strong>Kebutuhan Putusan:</strong> <strong>Wajib.</strong> Memerlukan Putusan *Inkracht* & Fiat Eksekusi.</li>
+                    <li><strong>Kebutuhan Putusan:</strong> <strong>Wajib.</strong> Memerlukan Putusan Inkracht & Fiat Eksekusi.</li>
                     <li><strong>Estimasi Waktu:</strong> Sangat Lambat (Berpotensi 2-5 Tahun per debitur).</li>
                 </ul>
 
@@ -763,16 +772,16 @@
                     <ul class="text-sm">
                         <li>(a) Persyaratan PT sebagai badan hukum belum/tidak terpenuhi;</li>
                         <li>(b) Pemegang saham ybs. baik langsung/tidak langsung dengan <strong>itikad buruk (bad faith)</strong> memanfaatkan Perseroan untuk <strong>kepentingan pribadi</strong>;</li>
-                        <li>(c) Pemegang saham ybs. terlibat dalam <strong>perbuatan melawan hukum</strong> (pidana atau perdata) yang dilakukan oleh Perseroan; atau</li>
+                        <li>(c) Pemegang saham ybs. terlibat dalam <strong>perbuatan melawan hukum</strong> (pidana atau perdata) yang dilakukan oleh Perseroan; atau
                         <li>(d) Pemegang saham ybs. baik langsung/tidak langsung secara melawan hukum <strong>menggunakan kekayaan Perseroan</strong>, yang mengakibatkan kekayaan Perseroan menjadi tidak cukup untuk melunasi utang Perseroan.</li>
                     </ul>
                 </div>
 
                 <h4>Analisis Peluang</h4>
                 <ul>
-                    <li><strong>Peluang:</strong> Sangat Sulit. PCV adalah upaya hukum luar biasa (extraordinary). Pengadilan di Indonesia secara historis sangat berhati-hati dalam menerapkannya.</li>
+                    <li><strong>Peluang:</strong> Sulit, namun <strong>JAUH LEBIH KUAT</strong> dalam kasus ini. PCV adalah upaya hukum luar biasa, tetapi pelanggaran fatal DSI (terutama ketiadaan RDL) adalah bukti textbook untuk gugatan PCV.</li>
                     <li><strong>Risiko:</strong> Litigasi yang sangat panjang (berpotensi bertahun-tahun) dan sangat mahal (memerlukan tim auditor forensik).</li>
-                    <li><strong>Rekomendasi:</strong> Ini bukanlah langkah pertama. Ini adalah "Opsi Nuklir" yang dijalankan setelah Opsi Perdata dan Pidana berjalan, dan jika aset korporasi DSI terbukti tidak mencukupi.</li>
+                    <li><strong>Rekomendasi:</strong> Ini bukanlah langkah pertama. Ini adalah "Opsi Nuklir" yang dijalankan setelah Opsi Perdata (PKPU) dan Pidana berjalan, dan jika aset korporasi DSI terbukti tidak mencukupi.</li>
                 </ul>
             </div>
         </div>
@@ -786,23 +795,17 @@
             <div class="modal-body">
                 <p>Untuk mengeksekusi aset pribadi pendiri DSI, lender harus membuktikan (dalam gugatan perdata) bahwa pendiri DSI memenuhi setidaknya salah satu unsur dalam Pasal 3(2) UU PT, khususnya poin (b), (c), dan (d).</p>
 
-                <h4>1. Membuktikan Poin (b) & (c): Itikad Buruk & Perbuatan Melawan Hukum</h4>
-                <p>Ini adalah inti dari argumen PCV. Argumentasinya adalah skema bisnis DSI yang secara sistematis dirancang untuk melakukan <strong>Hilah</strong> (trik legal), menjanjikan <strong>Riba</strong> (bunga), dan melakukan <strong>Tadlis</strong> (penipuan "Aman" SCR 100%) bukanlah "kesalahan bisnis" yang wajar.</p>
-                <p>Ini adalah skema yang disengaja yang dirancang oleh pendiri/pengurus. Tindakan Tadlis (penipuan) yang sistemik ini merupakan bukti prima facie dari "itikad buruk" (poin b) dan "perbuatan melawan hukum" (poin c) sebagaimana dimaksud oleh UU PT.</p>
+                <h4>1. Bukti Poin (d) & (b): Alter Ego & Kepentingan Pribadi (Bukti Fatal)</h4>
+                <p>Ini adalah dasar hukum terkuat untuk PCV. Ketiadaan RDL yang diwajibkan OJK berarti DSI melakukan <strong>commingling of funds (pencampuran dana)</strong>. Secara hukum, ini adalah bukti utama bahwa DSI hanya berfungsi sebagai <strong>"Alter Ego"</strong> atau "topeng" bagi Pemegang Saham Pengendali (PSP) dan Direksi. Ini membuktikan DSI (korporasi) hanyalah alat untuk (b) kepentingan pribadi dan (d) kekayaan perseroan digunakan secara melawan hukum.</p>
 
-                <h4>2. Membuktikan Poin (d): Pencampuran Aset & Kepentingan Pribadi</h4>
-                <p>Ini memerlukan audit forensik. Kunci pembuktian terletak pada "jejak uang" (money trail) dari fee ujrah.</p>
-                <ul>
-                    <li>Model Wakalah bil Ujrah DSI memiliki insentif beracun: fee (Ujrah) dibayar 100% di muka. Laporan keuangan DSI 2024 menunjukkan Laba Rp 24 Miliar, yang sebagian besar berasal dari fee ini.</li>
-                    <li>Audit forensik harus melacak aliran dana laba Rp 24 Miliar ini.</li>
-                    <li>Jika dana tersebut terbukti ditarik oleh pendiri sebagai "dividen", "bonus", atau "pinjaman pribadi" secara tidak wajar, sementara DSI tahu bahwa mereka memiliki kewajiban gagal bayar yang membengkak kepada lender, ini dapat memenuhi unsur "menggunakan kekayaan Perseroan" yang mengakibatkan DSI "tidak cukup untuk melunasi utang" (poin d).</li>
-                </ul>
-                
+                <h4>2. Bukti Poin (c): Itikad Buruk & Perbuatan Melawan Hukum</h4>
+                <p>Argumentasinya adalah skema bisnis DSI yang secara sistematis dirancang untuk melakukan <strong>Hilah</strong> (trik legal), menjanjikan <strong>Riba</strong> (bunga), dan melakukan <strong>Tadlis</strong> (penipuan "Aman" SCR 100%) bukanlah "kesalahan bisnis" yang wajar. Ini adalah skema yang disengaja yang dirancang oleh pendiri/pengurus, yang memenuhi unsur "itikad buruk" dan "perbuatan melawan hukum".</f>
+
                 <h4>Hipotesis Investigatif Kunci (Konflik Kepentingan)</h4>
                 <ul>
                     <li><strong>Fakta 1:</strong> Pendiri dan Direktur Utama DSI, Taufiq Aljufri, adalah seorang pengembang perumahan (developer).</li>
                     <li><strong>Fakta 2:</strong> Model bisnis DSI secara eksklusif berfokus pada pembiayaan developer properti.</li>
-                    <li><strong>Hipotesis:</strong> Sangat mungkin dana lender DSI disalurkan ke proyek-proyek properti yang terafiliasi atau dimiliki secara pribadi oleh Taufiq Aljufri. Jika terbukti, ini adalah skenario "alter ego" klasik dan "smoking gun" untuk gugatan PCV.</li>
+                    <li><strong>Hipotesis (Perlu Audit Forensik):</strong> Sangat mungkin dana lender DSI disalurkan ke proyek-proyek properti yang terafiliasi atau dimiliki secara pribadi oleh Taufiq Aljufri. Jika terbukti, ini adalah skenario "alter ego" klasik dan "smoking gun" untuk gugatan PCV.</li>
                 </ul>
             </div>
         </div>
@@ -816,26 +819,26 @@
             <div class="modal-body">
                 <p>Analisis ini menyimpulkan bahwa lender tidak boleh memilih salah satu opsi, tetapi harus menjalankan strategi gabungan secara simultan dan terkoordinasi untuk menciptakan tekanan hukum maksimal dari berbagai lini.</p>
 
-                <h4>Rekomendasi Strategi: "Perang Tiga Jalur" (Multi-Track Strategy)</h4>
+                <h4>Rekomendasi Taktis Final: Strategi Jalur Ganda (Dual-Track)</h4>
                 
                 <div class="highlight-box-red mt-6">
                     <h5>Peta Jalan Strategis: Rekomendasi Langkah Paralel</h5>
                     <p class="text-sm text-secondary mt-2">Strategi yang mengandalkan satu jalur tunggal diprediksi akan gagal. Para lender harus mengadopsi strategi serangan paralel (parallel-track strategy) yang terkoordinasi.</p>
                     <ul class="text-sm">
-                        <li><strong>Prioritas 1A (Kolektif):</strong> Segera bentuk paguyuban lender DSI yang solid dan terkoordinasi dengan satu perwakilan hukum.</li>
-                        <li><strong>Prioritas 1B (Regulatoris - Opsi 3):</strong> Gunakan paguyuban untuk mengajukan pengaduan yuridis kolektif ke OJK. Tuntutannya jelas: pencabutan izin usaha DSI dan perintah likuidasi, berdasarkan preseden Investree dan bukti Tadlis.</li>
-                        <li><strong>Prioritas 1C (Pidana - Opsi 5):</strong> Secara bersamaan, buat Laporan Pidana terpadu ke Bareskrim Polri terhadap manajemen kunci DSI atas dasar Penipuan (Pasal 378 KUHP).</li>
-                        <li><strong>Prioritas 2 (Pemulihan - Opsi 2/4):</strong> Gunakan tekanan dari Prioritas 1 sebagai leverage untuk segera mendaftarkan permohonan PKPU (Opsi 2) atau Gugatan Perdata di Pengadilan Agama (Opsi 4). Tujuannya untuk mengamankan sisa aset DSI dan memaksa audit forensik.</li>
-                        <li><strong>Prioritas Terendah (Hindari - Opsi 6):</strong> Secara tegas direkomendasikan untuk <strong>tidak</strong> menghabiskan sumber daya (waktu dan uang) untuk mengejar agunan borrower satu per satu.</li>
+                        <li><strong>Prioritas Utama (Jalur Perdata - Opsi PKPU):</strong> Segera ajukan permohonan <strong>PKPU</strong> ke Pengadilan Niaga. Ini adalah jalur tercepat dan paling optimal untuk (a) mengamankan sisa aset DSI dan agunan borrower di bawah pengawasan pengadilan, (b) memaksa DSI (Taufiq Aljufri dkk) duduk bernegosiasi, dan (c) memberikan lender kekuatan hukum (voting) untuk menyetujui skema restrukturisasi yang paling menguntungkan.</li>
+                        <li><strong>Tekanan Keras (Jalur Pidana - Opsi Pidana):</strong> Secara paralel, buat Laporan Polisi kolektif atas dugaan Penipuan (Pasal 378 KUHP) dan <strong>TPPU</strong>. Laporan ini harus menargetkan Direksi dan PSP (Taufiq Aljufri, Salman) secara pribadi. Lampirkan bukti Tadlis (pemasaran "Aman", data TKB90 palsu) dan bukti commingling of funds (ketiadaan RDL). Minta penyidik untuk menerapkan mekanisme <strong>Restitusi</strong> atas aset sitaan pelaku untuk dikembalikan kepada lender.</li>
+                        <li><strong>Pengamanan (Jalur Regulatoris - Opsi OJK):</strong> Lanjutkan pengaduan massal terkoordinasi ke OJK (tuntut pencabutan izin usaha untuk memicu likuidasi korporasi) dan ke DSN-MUI (tuntut pernyataan publik bahwa akad DSI adalah <strong>fasid</strong> karena Riba, untuk memperkuat gugatan di pengadilan).</li>
+                        <li><strong>Prioritas Terendah (Hindari - Opsi Agunan):</strong> Secara tegas direkomendasikan untuk <strong>tidak</strong> menghabiskan sumber daya (waktu dan uang) untuk mengejar agunan *borrower* satu per satu.</li>
                     </ul>
                 </div>
 
                 <h4>Kesimpulan Kritis</h4>
                 <p>Krisis PT Dana Syariah Indonesia adalah studi kasus tragis dari kegagalan syariah-washing. Label "syariah" dan izin OJK terbukti telah dieksploitasi untuk menciptakan ilusi keamanan, yang menutupi praktik inti yang secara substansial melanggar larangan <strong>Riba</strong> (bunga) dan <strong>Tadlis</strong> (penipuan).</p>
-                <p>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran prinsip syariah ini dapat ditransformasikan menjadi bukti yuridis untuk:</p>
+                <p>Ironisnya, kegagalan kepatuhan syariah (Tadlis dan Ta'addi) dan kegagalan tata kelola (ketiadaan RDL) inilah yang memberikan lender dasar hukum terkuat. Pelanggaran ini dapat ditransformasikan menjadi bukti yuridis untuk:</p>
                 <ol class="list-decimal pl-6 space-y-2 text-secondary">
-                    <li>Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong> di Pengadilan Agama (Opsi 4), dan</li>
-                    <li>Memenuhi unsur <strong>"itikad buruk"</strong> dan <strong>"perbuatan melawan hukum"</strong> yang diperlukan oleh UU Perseroan Terbatas untuk menembus tabir perusahaan dan mengejar aset pribadi pendirinya (Skenario PCV).</li>
+                    <li>Mengubah status DSI menjadi <strong>Dhaman (Penjamin)</strong> di Pengadilan Agama.</li>
+                    <li>Membatalkan akad sebagai <strong>Akad Fasid</strong> (rusak sejak awal).</li>
+                    <li>Memenuhi unsur <strong>"itikad buruk"</strong> dan <strong>"Alter Ego"</strong> yang diperlukan oleh UU PT untuk menembus tabir perusahaan dan mengejar aset pribadi pendirinya (Skenario PCV).</li>
                 </ol>
             </div>
         </div>
@@ -1114,6 +1117,4 @@
         });
     </script>
 </body>
-
 </html>
-
