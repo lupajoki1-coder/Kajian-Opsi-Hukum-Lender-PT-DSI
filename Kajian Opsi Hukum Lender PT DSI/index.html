@@ -231,6 +231,25 @@
                 
                 <!-- Kontainer Bagian -->
                 <div class="space-y-16 md:space-y-24">
+
+                    <!-- Disclaimer & Waktu Baca (POIN 1 & 2) -->
+                    <div class="mb-12 deep-card border-l-4 accent-border" style="background-color: var(--accent-teal-light);">
+                        <div class="p-6">
+                            <div class="flex items-start">
+                                <i data-lucide="alert-circle" class="w-6 h-6 accent-text-dark mr-4 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold accent-text-dark">Disclaimer Penting</h4>
+                                    <p class="text-sm text-secondary mt-1">
+                                        Kajian ini disusun berdasarkan data-data yang tersedia dari lender dan dokumen investigatif. Beberapa poin (seperti dugaan, hipotesis, dan estimasi nilai) masih bersifat asumsi/praduga yang memerlukan validasi dan verifikasi lebih lanjut.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center text-sm text-secondary mt-4 ml-10">
+                                <i data-lucide="clock" class="w-5 h-5 mr-2"></i>
+                                Estimasi waktu baca: 7 menit
+                            </div>
+                        </div>
+                    </div>
                 
                     <!-- Diagnosis Kritis (Ringkasan) -->
                     <section class="fade-in-up">
@@ -353,8 +372,9 @@
                             <div class="deep-card deep-card-hover overflow-hidden flex flex-col md:col-span-2">
                                 <div class="card-image-wrapper overflow-hidden">
                                     <!-- PERBAIKAN TATA LETAK: h-64 untuk proporsi yang lebih baik -->
-                                    <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                                         alt="Labirin atau jalan buntu" 
+                                    <!-- PERBAIKAN IMAGE RELEVANSI (POIN 2c) -->
+                                    <img src="https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                         alt="Jalan panjang dan berkabut" 
                                          class="w-full h-64 object-cover" 
                                          onerror="this.onerror=null;this.src='https://placehold.co/1200x400/334155/e2e8f0?text=Prioritas+Terendah';">
                                 </div>
@@ -407,7 +427,8 @@
                             <div class="deep-card deep-card-hover overflow-hidden flex flex-col md:col-span-2">
                                 <div class="card-image-wrapper overflow-hidden">
                                     <!-- PERBAIKAN TATA LETAK: h-64 untuk proporsi yang lebih baik -->
-                                    <img src="https://images.pexels.com/photos/101537/pexels-photo-101537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                    <!-- PERBAIKAN IMAGE (POIN 3) -->
+                                    <img src="https://images.pexels.com/photos/359989/pexels-photo-359989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                                          alt="Sebuah 'smoking gun' atau bukti kunci" 
                                          class="w-full h-64 object-cover object-center" 
                                          onerror="this.onerror=null;this.src='https://placehold.co/1200x400/334155/e2e8f0?text=Bukti+Kunci';">
@@ -432,8 +453,9 @@
                             <!-- Card 9: DPS -->
                             <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
                                 <div class="card-image-wrapper overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/8946726/pexels-photo-8946726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                                         alt="Buku syariah atau dokumen hukum Islam" 
+                                    <!-- PERBAIKAN IMAGE RELEVANSI (POIN 2a) -->
+                                    <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                         alt="Kursi kosong di ruang rapat" 
                                          class="w-full h-48 object-cover" 
                                          onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=DPS';">
                                 </div>
@@ -449,10 +471,11 @@
                             <!-- Card 10: OJK (Lagi) -->
                             <div class="deep-card deep-card-hover overflow-hidden flex flex-col">
                                 <div class="card-image-wrapper overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/8454530/pexels-photo-8454530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                                         alt="Kaca pembesar di atas laporan keuangan" 
+                                    <!-- PERBAIKAN IMAGE RELEVANSI (POIN 2b) -->
+                                    <img src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                         alt="Lobi kantor yang kosong" 
                                          class="w-full h-48 object-cover" 
-                                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Pengawasan';">
+                                         onerror="this.onerror=null;this.src='https:;placehold.co/600x400/334155/e2e8f0?text=Pengawasan';">
                                 </div>
                                 <div class="p-6 flex flex-col flex-grow">
                                     <h3 class="font-semibold text-xl mb-2">Kelemahan Pengawasan OJK</h3>
@@ -475,11 +498,11 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                                     <div class="bg-white p-6 rounded-lg shadow-inner">
                                         <h4 class="font-semibold text-lg mb-2 accent-text-dark">1. Prioritas Utama (Perdata)</h4>
-                                        <p class="text-sm text-secondary">Segera ajukan permohonan **PKPU** ke Pengadilan Niaga untuk mengamankan aset dan memaksa DSI bernegosiasi di bawah pengawasan hukum.</p>
+                                        <p class="text-sm text-secondary">Segera ajukan permohonan <strong>PKPU</strong> ke Pengadilan Niaga untuk mengamankan aset dan memaksa DSI bernegosiasi di bawah pengawasan hukum.</p>
                                     </div>
                                     <div class="bg-white p-6 rounded-lg shadow-inner">
                                         <h4 class="font-semibold text-lg mb-2 accent-text-dark">2. Tekanan Keras (Pidana)</h4>
-                                        <p class="text-sm text-secondary">Secara paralel, buat Laporan Polisi (Penipuan, TPPU) untuk menekan pengurus secara pribadi dan membuka opsi **Restitusi** aset ke korban.</p>
+                                        <p class="text-sm text-secondary">Secara paralel, buat Laporan Polisi (Penipuan, TPPU) untuk menekan pengurus secara pribadi dan membuka opsi <strong>Restitusi</strong> aset ke korban.</p>
                                     </div>
                                 </div>
                             </div>
@@ -579,7 +602,7 @@
                 <p>Konsekuensi hukum syariah dari akad yang fasid adalah transaksi wajib dibatalkan (faskh) dan kedua belah pihak dikembalikan ke posisi semula. Ini berarti DSI wajib mengembalikan seluruh modal pokok (ra's al-mal) yang telah diterimanya kepada lender.</p>
 
                 <h4 class="font-semibold text-black">PERINGATAN YURISDIKSI KRITIS: Pengadilan Agama</h4>
-                <p>Sengketa ini adalah sengketa Ekonomi Syariah karena didasarkan pada akad Wakalah bil Ujrah. Sesuai Pasal 25 akad DSI dan UU Peradilan Agama, gugatan wanprestasi ini harus diajukan ke **Pengadilan Agama Jakarta Selatan** (sesuai domisili DSI), bukan Pengadilan Negeri. Gugatan yang diajukan ke Pengadilan Negeri akan otomatis DITOLAK karena cacat yurisdiksi absolut.</p>
+                <p>Sengketa ini adalah sengketa Ekonomi Syariah karena didasarkan pada akad Wakalah bil Ujrah. Sesuai Pasal 25 akad DSI dan UU Peradilan Agama, gugatan wanprestasi ini harus diajukan ke <strong>Pengadilan Agama Jakarta Selatan</strong> (sesuai domisili DSI), bukan Pengadilan Negeri. Gugatan yang diajukan ke Pengadilan Negeri akan otomatis DITOLAK karena cacat yurisdiksi absolut.</p>
             </div>
         </div>
     </div>
@@ -605,7 +628,7 @@
 
                 <h4 class="font-semibold text-black">Koreksi Strategi: Pidana BUKAN Berarti Aset Hilang</h4>
                 <p>Kekhawatiran lender bahwa "aset akan disita negara" adalah pemahaman yang KURANG TEPAT dan kontra-produktif.</p>
-                <p>Dalam sistem hukum pidana modern (terutama kasus penipuan atau TPPU), korban (lender) memiliki hak untuk mengajukan **Restitusi** (ganti rugi). Aset yang disita oleh penyidik dari para pelaku (Taufiq Aljufri, Salman, dll) dapat dikembalikan kepada korban (lender) melalui penetapan dalam putusan hakim, bukan otomatis dirampas untuk negara.</p>
+                <p>Dalam sistem hukum pidana modern (terutama kasus penipuan atau TPPU), korban (lender) memiliki hak untuk mengajukan <strong>Restitusi</strong> (ganti rugi). Aset yang disita oleh penyidik dari para pelaku (Taufiq Aljufri, Salman, dll) dapat dikembalikan kepada korban (lender) melalui penetapan dalam putusan hakim, bukan otomatis dirampas untuk negara.</p>
                 <p>Jalur pidana justru penting untuk menekan para pelaku agar kooperatif dalam jalur perdata (PKPU) dan membantu melacak aset pribadi hasil kejahatan yang dapat digunakan untuk membayar lender.</p>
             </div>
         </div>
@@ -625,8 +648,8 @@
                 <p>DSI membangun ilusi keamanan dengan janji "Beragunan Properti". Namun, analisis yuridis mengungkap kelemahan fatal dari model bisnis DSI. Terdapat perbedaan fundamental antara mekanisme eksekusi agunan perbankan dengan P2P lending:</p>
                 
                 <ul class="list-disc list-inside space-y-2">
-                    <li><strong>Perbankan (KPR):</strong> Dilindungi oleh UU Hak Tanggungan (UUHT). Bank adalah Kreditur Separatis dan memegang hak **Parate Executie** (eksekusi langsung). Bank dapat langsung melelang agunan tanpa putusan pengadilan. Proses ini relatif cepat (hitungan bulan).</li>
-                    <li><strong>DSI (P2P Lender):</strong> Hubungan hukumnya adalah Perjanjian Perdata murni. Lender adalah Kreditur Konkuren (biasa) dan **TIDAK MEMILIKI** hak Parate Executie atas agunan properti.</li>
+                    <li><strong>Perbankan (KPR):</strong> Dilindungi oleh UU Hak Tanggungan (UUHT). Bank adalah Kreditur Separatis dan memegang hak <strong>Parate Executie</strong> (eksekusi langsung). Bank dapat langsung melelang agunan tanpa putusan pengadilan. Proses ini relatif cepat (hitungan bulan).</li>
+                    <li><strong>DSI (P2P Lender):</strong> Hubungan hukumnya adalah Perjanjian Perdata murni. Lender adalah Kreditur Konkuren (biasa) dan <strong>TIDAK MEMILIKI</strong> hak Parate Executie atas agunan properti.</li>
                 </ul>
 
                 <h4 class="font-semibold text-black">Implikasi: Agunan Non-Likuid dan Litigasi Bertahun-tahun</h4>
@@ -669,7 +692,7 @@
                 </ol>
 
                 <h4 class="font-semibold text-black">Bukti Kunci (Smoking Gun): Ketiadaan RDL</h4>
-                <p>Temuan (dari var 03) bahwa **DSI tidak menerapkan Rekening Dana Lender (RDL)** adalah bukti terkuat untuk PCV. Ketiadaan RDL menyebabkan commingling of funds (pencampuran dana), di mana dana titipan lender bercampur dengan dana operasional DSI.</p>
+                <p>Temuan (dari var 03) bahwa <strong>DSI tidak menerapkan Rekening Dana Lender (RDL)</strong> adalah bukti terkuat untuk PCV. Ketiadaan RDL menyebabkan commingling of funds (pencampuran dana), di mana dana titipan lender bercampur dengan dana operasional DSI.</p>
                 <p>Secara hukum, commingling of funds adalah salah satu bukti utama untuk membuktikan doktrin Alter Ego. Ini menunjukkan bahwa DSI (korporasi) hanyalah "topeng" atau alat (instrumentality) bagi Pemegang Saham Pengendali (PSP) dan Direksi untuk menyalahgunakan struktur PT. Ini membuka jalan bagi lender untuk menuntut pertanggungjawaban penuh atas aset pribadi para pengurus.</p>
             </div>
         </div>
